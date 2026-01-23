@@ -695,153 +695,223 @@ section,
 /*--------------------------------------------------------------
 # HERO SECTION (Dynamic Banner)
 --------------------------------------------------------------*/
-/* ===============================
-   HERO SECTION
-================================ */
-/* =========================
-   HERO BASE
-   ========================= */
 .hero {
-    background: #081c18;
-    padding: 100px 120px;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
     overflow: hidden;
-}
-
-.hero-container {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    align-items: center;
-    gap: 80px;
-}
-
-/* =========================
-   LEFT CONTENT
-   ========================= */
-.hero-left h1 {
-    color: #b9ffd9;
-    font-size: 42px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero-left h1 span {
-    font-style: italic;
-}
-
-.hero-left p {
-    color: #cfeee0;
-    max-width: 480px;
-    margin-bottom: 32px;
-}
-
-.btn {
-    background: #c9ff7a;
-    padding: 14px 28px;
-    border-radius: 999px;
-    color: #000;
-    font-weight: 600;
-    display: inline-block;
-    text-decoration: none;
-}
-
-/* =========================
-   RIGHT SLIDERS (DESKTOP)
-   ========================= */
-.hero-right {
+    padding: 0;
     display: flex;
-    gap: 18px;
-    height: 520px;
+    align-items: center;
+    justify-content: center;
 }
 
-.slider {
-    width: 180px;
+/* Carousel wrapper */
+.hero #hero-carousel {
+    width: 100%;
+    height: 100%;
+}
+
+/* Each slide */
+.hero-slide {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Dark overlay */
+.hero-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+/* Slide content */
+.hero .carousel-container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    animation: slideDown 18s ease-in-out infinite alternate;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
 }
 
-.slider.reverse {
-    animation-direction: alternate-reverse;
+/* Title */
+.hero h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
-.slider img {
+.hero h2 span {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Description */
+.hero p {
+    max-width: 70%;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    animation-delay: 0.4s;
+}
+
+/* Button */
+.hero .btn-get-started {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 14px 36px;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color);
+    color: #fff;
+    background: transparent;
+    transition: all 0.4s ease;
+    animation-delay: 0.8s;
+}
+
+.hero .btn-get-started:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/*--------------------------------------------------------------
+# PAGE TURN (SIDE FLIP) ANIMATION
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# CAROUSEL CONTROLS
+--------------------------------------------------------------*/
+
+/* Swiper container */
+.hero-swiper {
     width: 100%;
-    height: auto;
-    border-radius: 18px;
-    object-fit: cover;
+    height: 100vh;
 }
 
-/* =========================
-   DESKTOP ANIMATION
-   ========================= */
-@keyframes slideDown {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-50%);
-    }
+/* Swiper slide fix */
+.hero .swiper-slide {
+    min-height: 100vh;
 }
 
-/* =========================
-   TABLET & MOBILE
-   ========================= */
+/* Pagination dots */
+.hero .swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.5;
+}
+
+.hero .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# RESPONSIVE DESIGN
+--------------------------------------------------------------*/
 @media (max-width: 1024px) {
-    .hero {
-        padding: 80px 24px;
+    .hero h2 {
+        font-size: 38px;
     }
 
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-
-    /* SLIDERS MOVE BELOW TEXT */
-    .hero-right {
-        flex-direction: column;
-        height: auto;
-        gap: 16px;
-        overflow: hidden;
-        align-items: center;
-    }
-
-    /* EACH SLIDER ROW */
-    .slider {
-        width: max-content;
-        flex-direction: row;
-        animation: slideHorizontal 18s linear infinite;
-    }
-
-    .slider.reverse {
-        animation-direction: reverse;
-    }
-
-    .slider img {
-        width: 160px;
-        height: 220px;
-        flex-shrink: 0;
+    .hero p {
+        max-width: 80%;
+        font-size: 16px;
     }
 }
 
-/* =========================
-   MOBILE SMOOTHER SPEED
-   ========================= */
 @media (max-width: 768px) {
-    .slider {
-        animation-duration: 22s;
+    .hero-slide,
+    .hero .carousel-container {
+        min-height: 90vh;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        max-width: 90%;
+    }
+
+    /* Disable flip animation on mobile */
+}
+
+@media (max-width: 576px) {
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero .btn-get-started {
+        padding: 12px 28px;
+        font-size: 13px;
     }
 }
 
-/* =========================
-   MOBILE ANIMATION
-   ========================= */
-@keyframes slideHorizontal {
-    from {
-        transform: translateX(0);
+.hero .hero-waves {
+    display: block;
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+
+.hero .wave1 use {
+    animation: move-forever1 10s linear infinite;
+    animation-delay: -2s;
+    fill: var(--default-color);
+    opacity: 0.6;
+}
+
+.hero .wave2 use {
+    animation: move-forever2 8s linear infinite;
+    animation-delay: -2s;
+    fill: var(--default-color);
+    opacity: 0.4;
+}
+
+.hero .wave3 use {
+    animation: move-forever3 6s linear infinite;
+    animation-delay: -2s;
+    fill: var(--default-color);
+}
+
+@keyframes move-forever1 {
+    0% {
+        transform: translate(85px, 0%);
     }
-    to {
-        transform: translateX(-50%);
+
+    100% {
+        transform: translate(-90px, 0%);
+    }
+}
+
+@keyframes move-forever2 {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+
+    100% {
+        transform: translate(85px, 0%);
+    }
+}
+
+@keyframes move-forever3 {
+    0% {
+        transform: translate(-90px, 0%);
+    }
+
+    100% {
+        transform: translate(85px, 0%);
     }
 }
 

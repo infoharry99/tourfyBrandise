@@ -43,6 +43,9 @@ Route::get('/portfolio', function () {
     return view('portfolio');
 });
 
+Route::get('/slider', function () {
+    return view('slider');
+});
 
 Route::get('/', function () {
     
