@@ -85,13 +85,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
 });
 
-// Route::get('/portfolio', function () {
-//     return view('portfolio');
-// });
 
 
-Route::get('/portfolio', [PortfolioServiceController::class, 'portfolioServices'])
-        ->name('portfolio-services.index');
+
 
 Route::get('/slider', function () {
     return view('slider');
@@ -99,8 +95,6 @@ Route::get('/slider', function () {
 
 Route::get('/', function () {
 
-     Artisan::call('storage:link');
-    
     $banners = Banner::where('status', 1)
         ->latest()
         ->get();
@@ -115,4 +109,11 @@ Route::get('/', function () {
     
     return view('welcome',compact('banners','services'));
 });
-   
+
+
+// Route::get('/portfolio-section', function () {
+//     return view('portfolio');
+// });
+
+Route::get('/portfolio-section', [PortfolioServiceController::class, 'portfolioServices'])
+        ->name('portfolio-services.index');

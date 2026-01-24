@@ -11,7 +11,7 @@
 
 <style>
     body{
-        background:#eaf1f8;
+        background:#ef65037c;
         min-height:100vh;
         display:flex;
         align-items:center;
@@ -31,7 +31,7 @@
 
     /* LEFT PANEL */
     .login-left{
-        background:linear-gradient(135deg,#2f80ed,#56ccf2);
+        background:linear-gradient(135deg,#ef6603,#fc8733);
         color:#fff;
         padding:50px;
         position:relative;
@@ -67,7 +67,7 @@
 
     .login-right h4{
         font-weight:700;
-        color:#2f80ed;
+        color:#ef6603;
     }
 
     .form-control{
@@ -79,12 +79,12 @@
 
     .form-control:focus{
         box-shadow:none;
-        border:2px solid #2f80ed;
+        border:2px solid #ef6603;
         background:#fff;
     }
 
     .login-btn{
-        background:#2f80ed;
+        background:#ef6603;
         border:none;
         padding:14px;
         width:100%;

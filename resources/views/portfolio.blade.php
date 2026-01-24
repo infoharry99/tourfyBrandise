@@ -233,7 +233,7 @@
                             @foreach($service->items as $item)
 
                                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ $service->slug }}">
-                                    <img src="{{ asset('storage/'.$item->image) }}"
+                                    <img src="{{ asset($item->image) }}"
                                         class="img-fluid"
                                         alt="{{ $item->title }}">
 
@@ -241,7 +241,7 @@
                                         <h4>{{ $item->title }}</h4>
                                         <p>{{ $item->description }}</p>
 
-                                        <a href="{{ asset('storage/'.$item->image) }}"
+                                        <a href="{{ asset($item->image) }}"
                                         title="{{ $item->title }}"
                                         data-gallery="portfolio-gallery-{{ $service->slug }}"
                                         class="glightbox preview-link">

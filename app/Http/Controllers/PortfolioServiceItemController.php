@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PortfolioService;
 use App\Models\PortfolioServiceItem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PortfolioServiceItemController extends Controller
 {
@@ -23,7 +24,17 @@ class PortfolioServiceItemController extends Controller
             'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
-        $imagePath = $request->file('image')->store('portfolio/services', 'public');
+        // $imagePath = $request->file('image')->store('portfolio/services', 'public');
+         // Generate unique image name
+        $imageName = time() . '_' . $request->file('image')->getClientOriginalName();
+
+        // Move image to public/portfolio/services
+        $request->file('image')->move(
+            public_path('portfolio/services'),
+            $imageName
+        );
+
+        $imagePath = 'portfolio/services/' . $imageName;
 
         PortfolioServiceItem::create([
             'portfolio_service_id' => $request->portfolio_service_id,
@@ -37,26 +48,42 @@ class PortfolioServiceItemController extends Controller
         return back()->with('success', 'Item added successfully');
     }
 
+   
+
     public function update(Request $request, $id)
     {
         $item = PortfolioServiceItem::findOrFail($id);
 
         $request->validate([
-            
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         $data = $request->only(['title', 'description']);
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')
-                ->store('portfolio/services', 'public');
+
+            // ❌ Delete old image
+            if ($item->image && File::exists(public_path($item->image))) {
+                File::delete(public_path($item->image));
+            }
+
+            // ✅ Save new image in public folder
+            $imageName = time().'_'.$request->file('image')->getClientOriginalName();
+
+            $request->file('image')->move(
+                public_path('portfolio/services'),
+                $imageName
+            );
+
+            // Save relative path
+            $data['image'] = 'portfolio/services/'.$imageName;
         }
 
         $item->update($data);
 
         return back()->with('success', 'Item updated successfully');
     }
+
 
     public function destroy($id)
     {

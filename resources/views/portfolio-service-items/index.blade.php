@@ -48,7 +48,7 @@
                 <td>{{ $loop->iteration }}</td>
 
                 <td>
-                    <img src="{{ asset('storage/'.$item->image) }}"
+                    <img src="{{ asset($item->image) }}"
                          width="80" class="rounded">
                 </td>
 
