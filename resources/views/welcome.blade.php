@@ -32,383 +32,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <style>
-    .trusted-section {
-    background: #fbfbf5;
-    padding: 90px 0;
-    overflow: hidden;
-    text-align: center;
-    }
 
-    .trusted-title {
-    font-size: 22px;
-    color: #0b2b23;
-    margin-bottom: 60px;
-    }
-
-    /* ROW */
-    .logo-row {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 40px;
-
-    /* 🔥 EDGE FADE (THIS IS THE MAGIC) */
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 8%,
-        black 92%,
-        transparent
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        black 8%,
-        black 92%,
-        transparent
-    );
-    }
-
-    /* TRACK */
-    .logo-track {
-    display: flex;
-    gap: 80px;
-    width: max-content;
-    animation: scroll 35s linear infinite;
-    align-items: center;
-    }
-
-    /* Reverse direction */
-    .logo-row.reverse .logo-track {
-    animation-direction: reverse;
-    }
-
-    /* LOGOS */
-    .logo-track img {
-    height: 38px;
-    opacity: 0.7;
-    filter: grayscale(100%);
-    transition: opacity 0.3s ease;
-    user-select: none;
-    }
-
-    .logo-track img:hover {
-    opacity: 1;
-    }
-
-    /* ANIMATION */
-    @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-    .logo-track {
-        gap: 40px;
-    }
-
-    .logo-track img {
-        height: 28px;
-    }
-    }
-</style>
-
-<style>
-    /* SECTION */
-    .services-marquee {
-    background: #fbfbf5;
-    padding: 80px 0;
-    overflow: hidden;
-    }
-
-    /* MARQUEE */
-    .marquee {
-    width: 100%;
-    overflow: hidden;
-    }
-
-    .marquee-track {
-    display: flex;
-    gap: 28px;
-    width: max-content;
-    animation: marquee 45s linear infinite;
-    }
-
-    /* CARD */
-    .service-card {
-    position: relative;
-    width: 320px;
-    height: 460px;
-    border-radius: 22px;
-    overflow: hidden;
-    flex-shrink: 0;
-    cursor: pointer;
-    }
-
-    .service-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-    }
-
-    /* TITLE */
-    .service-card h3 {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    right: 24px;
-    color: #fff;
-    font-size: 26px;
-    font-weight: 500;
-    z-index: 2;
-    font-family: serif;
-    }
-
-    /* DARK OVERLAY */
-    .card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.75)
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 1;
-    }
-
-    /* SKILLS */
-    .skills {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: -120px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    z-index: 2;
-    transition: bottom 0.4s ease;
-    }
-
-    .skills span {
-    padding: 8px 14px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.6);
-    color: #fff;
-    font-size: 13px;
-    backdrop-filter: blur(6px);
-    background: rgba(255,255,255,0.08);
-    }
-
-    /* HOVER EFFECTS */
-    .service-card:hover img {
-    transform: scale(1.05);
-    }
-
-    .service-card:hover .card-overlay {
-    opacity: 1;
-    }
-
-    .service-card:hover .skills {
-    bottom: 24px;
-    }
-
-    /* ANIMATION */
-    @keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-    .service-card {
-        width: 260px;
-        height: 380px;
-    }
-
-    .service-card h3 {
-        font-size: 22px;
-    }
-    }
-</style>
-
-<style>
-  /* =========================
-   SECTION
-   ========================= */
-  .comparison-section {
-      background: #071c19;
-      padding: 90px 80px;
-      color: #fff;
-      font-family: Inter, system-ui, sans-serif;
-      overflow: hidden;
-  }
-
-  /* =========================
-    HEADER (DESKTOP)
-    ========================= */
-  .comparison-header {
-      display: grid;
-      grid-template-columns: 2.5fr repeat(5, 1fr);
-      margin-bottom: 40px;
-      color: #e7f7ef;
-      font-size: 18px;
-  }
-
-  /* =========================
-    ROW BASE
-    ========================= */
-  .comparison-row {
-      display: grid;
-      grid-template-columns: 2.5fr repeat(5, 1fr);
-      align-items: center;
-      padding: 40px 36px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-
-      /* animation */
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeUp 0.8s ease forwards;
-  }
-
-  .comparison-row:nth-child(2) { animation-delay: 0.1s; }
-  .comparison-row:nth-child(3) { animation-delay: 0.2s; }
-  .comparison-row:nth-child(4) { animation-delay: 0.3s; }
-
-  /* =========================
-    FEATURED ROW
-    ========================= */
-  .comparison-row.featured {
-      background: #d9ff8a;
-      color: #071c19;
-      border-radius: 999px;
-      margin-bottom: 40px;
-      border: none;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-  }
-
-  /* =========================
-    TITLES
-    ========================= */
-  .row-title h3 {
-      font-size: 32px;
-      margin-bottom: 10px;
-  }
-
-  .row-title h4 {
-      font-size: 26px;
-      margin-bottom: 10px;
-  }
-
-  .row-title p {
-      font-size: 15px;
-      opacity: 0.8;
-      max-width: 420px;
-  }
-
-  /* =========================
-    ICONS
-    ========================= */
-  .icon {
-      font-size: 26px;
-      text-align: center;
-  }
-
-  .icon.check {
-      color: #0a3d32;
-  }
-
-  .comparison-row:not(.featured) .icon.check {
-      color: #b6ffdc;
-  }
-
-  .icon.cross {
-      color: rgba(255,255,255,0.6);
-  }
-
-  /* =========================
-    HOVER (DESKTOP POLISH)
-    ========================= */
-  @media (min-width: 1025px) {
-      .comparison-row:not(.featured):hover {
-          background: rgba(255,255,255,0.04);
-      }
-  }
-
-  /* =========================
-    TABLET
-    ========================= */
-  @media (max-width: 1024px) {
-      .comparison-section {
-          padding: 60px 30px;
-      }
-
-      .comparison-header,
-      .comparison-row {
-          grid-template-columns: 2fr repeat(5, 1fr);
-      }
-  }
-
-  /* =========================
-    MOBILE (CARD MODE)
-    ========================= */
-  @media (max-width: 768px) {
-
-      .comparison-header {
-          display: none;
-      }
-
-      .comparison-row {
-          grid-template-columns: 1fr;
-          gap: 18px;
-          border-radius: 24px;
-          margin-bottom: 24px;
-          padding: 28px;
-          background: rgba(255,255,255,0.04);
-      }
-
-      .comparison-row.featured {
-          border-radius: 28px;
-      }
-
-      /* Feature list */
-      .comparison-row .icon {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-size: 18px;
-      }
-
-      .comparison-row .icon::before {
-          content: attr(data-label);
-          font-size: 14px;
-          opacity: 0.7;
-          min-width: 140px;
-      }
-  }
-
-  /* =========================
-    ANIMATION
-    ========================= */
-  @keyframes fadeUp {
-      to {
-          opacity: 1;
-          transform: translateY(0);
-      }
-  }
-
-</style>
 </head>
 
 <body class="index-page">
@@ -549,27 +173,27 @@
 
     @php
     $images = [
-      'https://picsum.photos/id/1011/400/600',
-      'https://picsum.photos/id/1015/400/600',
-      'https://picsum.photos/id/1025/400/600',
-      'https://picsum.photos/id/1035/400/600',
-      'https://picsum.photos/id/1041/400/600',
-      'https://picsum.photos/id/1050/400/600',
-      'https://picsum.photos/id/1062/400/600',
-      'https://picsum.photos/id/1074/400/600',
-      'https://picsum.photos/id/1084/400/600',
-      'https://picsum.photos/id/1080/400/600',
+      'https://cdn.simpleicons.org/google',
+      'https://cdn.simpleicons.org/meta',
+      'https://cdn.simpleicons.org/amazon',
+      'https://cdn.simpleicons.org/microsoft',
+      'https://cdn.simpleicons.org/netflix',
+      'https://cdn.simpleicons.org/spotify',
+      'https://cdn.simpleicons.org/adobe',
+      'https://cdn.simpleicons.org/shopify',
+      'https://cdn.simpleicons.org/slack',
+      'https://cdn.simpleicons.org/airbnb',
 
-      'https://picsum.photos/id/109/400/600',
-      'https://picsum.photos/id/110/400/600',
-      'https://picsum.photos/id/111/400/600',
-      'https://picsum.photos/id/112/400/600',
-      'https://picsum.photos/id/113/400/600',
-      'https://picsum.photos/id/114/400/600',
-      'https://picsum.photos/id/115/400/600',
-      'https://picsum.photos/id/116/400/600',
-      'https://picsum.photos/id/117/400/600',
-      'https://picsum.photos/id/118/400/600',
+      'https://cdn.simpleicons.org/uber',
+      'https://cdn.simpleicons.org/stripe',
+      'https://cdn.simpleicons.org/paypal',
+      'https://cdn.simpleicons.org/salesforce',
+      'https://cdn.simpleicons.org/intuit',
+      'https://cdn.simpleicons.org/oracle',
+      'https://cdn.simpleicons.org/zoom',
+      'https://cdn.simpleicons.org/dropbox',
+      'https://cdn.simpleicons.org/atlassian',
+      'https://cdn.simpleicons.org/figma',
     ];
 
     $row1 = array_slice($images, 0, 10);
@@ -577,21 +201,29 @@
     @endphp
 
 
+
     <section class="trusted-section">
-      <p class="trusted-title">
+      {{-- <p class="trusted-title">
         Trusted by 500+ of the world's top brands
-      </p>
+      </p> --}}
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Clients</h2>
+        <p>
+         Trusted by 500+ industry-leading brands across the globe
+        </p>
+      </div>
 
       <!-- ROW 1 -->
       <div class="logo-row">
         <div class="logo-track">
           @foreach($row1 as $img)
-            <img src="{{ $img }}" alt="">
+            <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
 
           {{-- duplicate for seamless loop --}}
           @foreach($row1 as $img)
-            <img src="{{ $img }}" alt="">
+            <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
         </div>
       </div>
@@ -600,12 +232,12 @@
       <div class="logo-row reverse">
         <div class="logo-track">
           @foreach($row2 as $img)
-            <img src="{{ $img }}" alt="">
+            <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
 
           {{-- duplicate for seamless loop --}}
           @foreach($row2 as $img)
-            <img src="{{ $img }}" alt="">
+            <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
         </div>
       </div>
