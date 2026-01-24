@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BtotMail - Dashboard</title>
+    <title>Tourfy Brandise - Dashboard</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap JS Bundle (with Popper) -->
@@ -378,7 +378,7 @@
             padding: 0.75rem 1.5rem;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: end;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -893,12 +893,12 @@
 
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <div class="logo">
+            {{-- <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
-            </div>
-            <span class="brand-name">BtotMail</span>
+            </div> --}}
+            <span class="brand-name">Tourfy Brandise</span>
             <button class="collapse-btn" onclick="toggleSidebar()">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -907,49 +907,56 @@
         </div>
 
         <nav class="sidebar-nav">
-            <div class="nav-item">
+            {{-- <div class="nav-item">
                 <a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : '' }}" >
                     <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h7v7H4V6zm9 0h7v7h-7V6zM4 15h7v3H4v-3zm9 0h7v3h-7v-3z"/>
                         </svg>
                     </span>
                     <span class="nav-text">Dashboard</span>
                 </a>
-            </div>
+            </div> --}}
 
-            <div class="nav-item">
+            {{-- <div class="nav-item">
                 <a href="{{ route('admin.banners.index') }}" class="nav-link {{ Request::is('admin/banners*') ? 'active' : '' }}" >
                     <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5h18v14H3V5zm4 10l3-4 4 5 3-3 3 4"/>
                         </svg>
+
                     </span>
                     <span class="nav-text">Banner</span>
                 </a>
-            </div>
+            </div> --}}
 
-            <div class="nav-item">
+            {{-- <div class="nav-item">
                 <a href="{{ route('admin.portfolios.index') }}" class="nav-link {{ Request::is('admin/portfolios*') ? 'active' : '' }}" >
                     <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 6V4h6v2m4 4v8a2 2 0 01-2 2H7a2 2 0 01-2-2v-8m14 0H5"/>
                         </svg>
+
                     </span>
                     <span class="nav-text">Portfolios</span>
                 </a>
-            </div>
+            </div> --}}
 
-            <div class="nav-item">
+            {{-- <div class="nav-item">
                 <a href="{{ route('admin.abouts.index') }}" class="nav-link {{ Request::is('admin/abouts*') ? 'active' : '' }}" >
                     <span class="nav-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 12a4 4 0 100-8 4 4 0 000 8zm6 8H6a6 6 0 0112 0z"/>
                         </svg>
+
                     </span>
                     <span class="nav-text">Abouts</span>
                 </a>
-            </div>
+            </div> --}}
 
             {{-- <div class="nav-item">
                 <a href="{{ route('admin.services.index') }}" class="nav-link {{ Request::is('admin/services*') ? 'active' : '' }}" >
@@ -966,8 +973,10 @@
                 <a href="{{ route('admin.portfolio-services.index') }}" class="nav-link {{ Request::is('admin/portfolio-services*') ? 'active' : '' }}" >
                     <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317a1 1 0 011.35-.447l.67.335a1 1 0 01.447 1.35l-.28.56a8.001 8.001 0 014.316 4.316l.56-.28a1 1 0 011.35.447l.335.67a1 1 0 01-.447 1.35l-.56.28a8.001 8.001 0 01-4.316 4.316l.28.56a1 1 0 01-.447 1.35l-.67.335a1 1 0 01-1.35-.447l-.28-.56a8.001 8.001 0 01-4.316-4.316l-.56.28a1 1 0 01-1.35-.447l-.335-.67a1 1 0 01.447-1.35l.56-.28a8.001 8.001 0 014.316-4.316l-.28-.56a1 1 0 01.447-1.35l.67-.335z"/>
                         </svg>
+
                     </span>
                     <span class="nav-text">Services</span>
                 </a>
@@ -1125,7 +1134,7 @@
                 </div>
             </div> --}}
         </nav>
-
+{{-- 
         <div class="sidebar-footer">
             <div class="user-info">
                 <div class="user-avatar-small">TT</div>
@@ -1133,17 +1142,17 @@
                     <div class="user-name">test test</div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </aside>
 
     <div class="main-wrapper">
         <header class="topbar">
-            <div class="search-box">
+            {{-- <div class="search-box">
                 <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
                 <input type="text" placeholder="Search campaigns, customers, or templates...">
-            </div>
+            </div> --}}
             <div class="topbar-actions">
                 <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
                     <svg id="darkIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1153,15 +1162,15 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
                     </svg>
                 </button>
-                <button class="icon-btn">
+                {{-- <button class="icon-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
                     </svg>
                     <span class="notification-badge"></span>
-                </button>
+                </button> --}}
                 <div class="user-profile">
-                    <div class="user-avatar">TT</div>
-                    <span class="user-profile-text">test test</span>
+                    <div class="user-avatar">{{ Auth::user()->name[0] }}</div>
+                    <span class="user-profile-text">{{ Auth::user()->name }}</span>
                     <span class="status-badge">Active</span>
                 </div>
             </div>

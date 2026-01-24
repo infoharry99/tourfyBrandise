@@ -1,4 +1,4 @@
- <div class="page-header">
+<div class="page-header">
                 <h1 class="page-title">Dashboard</h1>
                 <p class="page-subtitle">Welcome back! Here's an overview of your email marketing performance.</p>
             </div>

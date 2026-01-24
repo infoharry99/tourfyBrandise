@@ -27,12 +27,14 @@ class AuthController extends Controller
             'name'     => $request->name,
             'email'    => $request->email,
             'password' => Hash::make($request->password),
+            'role'     => 'user', 
         ]);
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect('/dashboard');
+        return redirect('/login');
     }
+
 
     /* ================= LOGIN ================= */
     public function showLogin()
@@ -40,17 +42,23 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request)
+   public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/dashboard');
+
+            if (Auth::user()->role === 'admin') {
+                return redirect()->route('admin.portfolio-services.index');
+            }
+
+            return redirect('/admin/portfolio-services');
         }
 
         return back()->with('error', 'Invalid email or password');
     }
+
 
     /* ================= LOGOUT ================= */
     public function logout(Request $request)

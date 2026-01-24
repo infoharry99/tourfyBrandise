@@ -6,10 +6,10 @@ use App\Http\Controllers\AuthController;
 
 /* ---------- AUTH ROUTES ---------- */
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -32,7 +32,7 @@ Route::get('/run', function () {
 
 Route::resource('banners', BannerController::class);
 // middleware(['auth'])->
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('banners', BannerController::class);
 
@@ -79,9 +79,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         [PortfolioServiceItemController::class, 'updateStatus'])
         ->name('portfolio-service-items.update-status');
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
 
 });
 

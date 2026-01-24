@@ -70,7 +70,7 @@
                     
                     {{-- Add Items --}}
                     <a href="{{ route('admin.portfolio-service-items.index', $service->id) }}"
-                    class="btn btn-sm btn-info">
+                    class="btn btn-sm btn-info text-white">
                         + Items
                     </a>
                 </td>
