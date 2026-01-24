@@ -660,8 +660,11 @@
             <li data-filter=".filter-app">App</li>
             <li data-filter=".filter-product">Card</li>
             <li data-filter=".filter-branding">Web</li> --}}
-            <li data-filter="*" class="filter-active">Social Media Management</li>
-            <li data-filter="*" class="filter-active">Performance Marketing</li>
+            
+            @foreach($services as $service)
+              <li data-filter="*" class="filter-active"> {{ $service->service_name }}</li>
+            @endforeach
+            {{-- <li data-filter="*" class="filter-active">Performance Marketing</li>
             <li data-filter="*" class="filter-active">Search Engine Optimization (SEO)</li>
             <li data-filter="*" class="filter-active">Influencer Marketing</li>
             <li data-filter="*" class="filter-active">Website Design & Development</li>
@@ -676,7 +679,7 @@
             <li data-filter="*" class="filter-active">E-commerce Growth</li>
             <li data-filter="*" class="filter-active">Creative Consultancy</li>
             <li data-filter="*" class="filter-active">Retail Experience Design</li>
-            <li data-filter="*" class="filter-active">Answer Engine Optimization (AEO)</li>
+            <li data-filter="*" class="filter-active">Answer Engine Optimization (AEO)</li> --}}
           </ul>
           <!-- End Portfolio Filters -->
 
@@ -1333,6 +1336,38 @@
           <p>
             Working with full scale creative agencies can be slow,
             costly, and inflexible.
+          </p>
+        </div>
+
+        <div class="icon cross" data-label="Speed">✕</div>
+        <div class="icon cross" data-label="Flexibility">✕</div>
+        <div class="icon check" data-label="Quality">✓</div>
+        <div class="icon check" data-label="Scalability">✓</div>
+        <div class="icon cross" data-label="Cost-effectiveness">✕</div>
+      </div>
+
+      <!-- Freelancers -->
+      <div class="comparison-row">
+        <div class="row-title">
+          <h4 style="color: #fff;">Freelancers</h4>
+          <p>
+            Freelancers can be unreliable and hard to scale, leading to inconsistent work and questionable quality.
+          </p>
+        </div>
+
+        <div class="icon cross" data-label="Speed">✕</div>
+        <div class="icon cross" data-label="Flexibility">✕</div>
+        <div class="icon check" data-label="Quality">✓</div>
+        <div class="icon check" data-label="Scalability">✓</div>
+        <div class="icon check" data-label="Cost-effectiveness">✓</div>
+      </div>
+
+
+      <div class="comparison-row">
+        <div class="row-title">
+          <h4 style="color: #fff;">Self-service tools</h4>
+          <p>
+            These solutions make incremental improvements to capacity, and work mostly for simpler, repetitive tasks.
           </p>
         </div>
 

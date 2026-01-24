@@ -35,6 +35,8 @@
   
 </head>
 
+{{-- {{dd($services);}} --}}
+
 <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top"
     style="box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);background-color: rgba(42, 44, 57, 0.9);"
@@ -81,7 +83,7 @@
     </header>
 
     <main class="main">
-        <section id="portfolio" class="portfolio section mt-5">
+        {{-- <section id="portfolio" class="portfolio section mt-5">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -197,7 +199,73 @@
                 </div>
 
             </div>
+        </section> --}}
+        <section id="portfolio" class="portfolio section mt-5">
+
+        <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Portfolio</h2>
+                <p>What we've done</p>
+            </div>
+
+            <div class="container">
+
+                <div class="isotope-layout"
+                    data-default-filter="*"
+                    data-layout="masonry"
+                    data-sort="original-order">
+
+                    {{-- FILTERS --}}
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active">All</li>
+
+                        @foreach($services as $service)
+                            <li data-filter=".filter-{{ $service->slug }}">
+                                {{ $service->service_name }}
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    {{-- ITEMS --}}
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                        @foreach($services as $service)
+                            @foreach($service->items as $item)
+
+                                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ $service->slug }}">
+                                    <img src="{{ asset('storage/'.$item->image) }}"
+                                        class="img-fluid"
+                                        alt="{{ $item->title }}">
+
+                                    <div class="portfolio-info">
+                                        <h4>{{ $item->title }}</h4>
+                                        <p>{{ $item->description }}</p>
+
+                                        <a href="{{ asset('storage/'.$item->image) }}"
+                                        title="{{ $item->title }}"
+                                        data-gallery="portfolio-gallery-{{ $service->slug }}"
+                                        class="glightbox preview-link">
+                                            <i class="bi bi-zoom-in"></i>
+                                        </a>
+
+                                        {{-- OPTIONAL DETAILS PAGE --}}
+                                        {{-- <a href="{{ route('portfolio.details', $item->id) }}"
+                                        class="details-link">
+                                        <i class="bi bi-link-45deg"></i>
+                                        </a> --}}
+                                    </div>
+                                </div>
+
+                            @endforeach
+                        @endforeach
+
+                    </div><!-- End Portfolio Container -->
+
+                </div>
+
+            </div>
         </section>
+
     </main>
 
     <footer id="footer" class="footer dark-background">
