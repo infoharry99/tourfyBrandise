@@ -98,6 +98,8 @@ Route::get('/slider', function () {
 });
 
 Route::get('/', function () {
+
+     Artisan::call('storage:link');
     
     $banners = Banner::where('status', 1)
         ->latest()
@@ -110,7 +112,7 @@ Route::get('/', function () {
         ->where('is_active', 1)
         ->orderBy('sort_order')
         ->get();
-
+    
     return view('welcome',compact('banners','services'));
 });
    
