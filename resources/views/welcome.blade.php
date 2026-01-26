@@ -18,7 +18,7 @@
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
 <meta property="og:title" content="Tourfy Brandise LLP">
-<meta property="og:description" content="Travel, Branding & Digital Solutions">
+<meta property="og:description" content="Branding Agency & Digital Solutions">
 <meta property="og:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
