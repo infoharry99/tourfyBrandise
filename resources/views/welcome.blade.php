@@ -5,12 +5,36 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Tourfy Brandise</title>
-  <meta name="description" content="">
+  <meta name="description" content="Your short website description goes here">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
   {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
   {{-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
+
+  <!-- Favicon -->
+  <link rel="icon" href="/tb.jpeg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/tb.jpeg">
+
+  <!-- Basic Meta -->
+ 
+
+  <!-- SEO -->
+  
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:title" content="Tourfy Brandise LLP">
+  <meta property="og:description" content="Your short website description goes here">
+  <meta property="og:image" content="/tb.jpeg">
+  <meta property="og:url" content="http://tourfybrandise.infoharry.in/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Website Name">
+  <meta name="twitter:description" content="Your short website description goes here">
+  <meta name="twitter:image" content="/tb.jpeg">
+
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -32,6 +56,70 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Tourfy Brandise LLP",
+      "image": "/tb.jpeg",
+      "@id": "http://tourfybrandise.infoharry.in/",
+      "url": "http://tourfybrandise.infoharry.in/",
+      "telephone": "+91XXXXXXXXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Office Address",
+        "addressLocality": "Delhi",
+        "addressRegion": "DL",
+        "postalCode": "Your Pin Code",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.6139,
+        "longitude": 77.2090
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/tourfybrandise",
+        "https://www.linkedin.com/company/tourfybrandise"
+      ],
+      "description": "India's fastest-growing UGC agency and 360° marketing firm based in Delhi, specializing in content that converts for D2C brands.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Marketing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "User Generated Content (UGC) Production"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Social Media Marketing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "360° Brand Strategy"
+            }
+          }
+        ]
+      }
+    }
+  </script>
 
 </head>
 
@@ -1638,6 +1726,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  
 </body>
 
 </html>
