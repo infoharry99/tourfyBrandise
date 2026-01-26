@@ -11,6 +11,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -981,6 +984,19 @@
                     <span class="nav-text">Services</span>
                 </a>
             </div>
+
+             <div class="nav-item">
+                <a href="{{ route('admin.blogs.index') }}" class="nav-link {{ Request::is('admin/blogs*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+
+                    </span>
+                    <span class="nav-text">Blogs</span>
+                </a>
+            </div>
+
             
             {{-- <div class="nav-item">
                 <a href="javascript:void(0)" class="nav-link" onclick="toggleDropdown(this)">
@@ -1134,15 +1150,20 @@
                 </div>
             </div> --}}
         </nav>
-{{-- 
+
         <div class="sidebar-footer">
             <div class="user-info">
-                <div class="user-avatar-small">TT</div>
-                <div class="user-details">
-                    <div class="user-name">test test</div>
-                </div>
+                <!-- Logout Form -->
+            <form method="POST" action="{{ route('logout') }}" class="logout-form">
+                @csrf
+                <button type="submit" class=" btn btn-danger">
+                    <i class="fa fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+            
             </div>
-        </div> --}}
+        </div>
     </aside>
 
     <div class="main-wrapper">

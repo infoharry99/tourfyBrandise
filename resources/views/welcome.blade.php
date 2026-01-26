@@ -924,6 +924,43 @@
 
     </section><!-- /Testimonials Section -->
 
+     <!-- Blogs Section -->
+   <section class="flex-section">
+     <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Blogs</h2>
+        <p>Work, ideas, and impact.</p>
+      </div><!-- End Section Title -->
+
+      <div class="flex-container">
+
+        @foreach($blogs as $index => $blog)
+          <div class="flex-card 
+            {{ $index == 1 ? 'light' : '' }} 
+            {{ $index == 2 ? 'lime' : '' }}">
+
+            <div class="flex-image">
+              <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
+            </div>
+
+            <div class="flex-content">
+              <h3>
+                {{ $blog->title }}
+              </h3>
+
+              <p>
+                {{ $blog->short_description }}
+              </p>
+              {{-- <p>{{ $blog->description }}</p> --}}
+            </div>
+
+          </div>
+        @endforeach
+
+      </div>
+    </section>
+
+
     <!-- Pricing Section -->
     {{-- <section id="pricing" class="pricing section">
 

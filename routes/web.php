@@ -16,11 +16,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PortfolioServiceController;
 use App\Http\Controllers\PortfolioServiceItemController;
 use App\Http\Controllers\ServiceController;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\PortfolioService;
 use Illuminate\Support\Facades\Artisan;
 
@@ -78,6 +80,21 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/portfolio-service-items/update-status', 
         [PortfolioServiceItemController::class, 'updateStatus'])
         ->name('portfolio-service-items.update-status');
+    
+    Route::get('/blogs', [BlogController::class, 'index'])
+        ->name('blogs.index');
+
+    Route::post('/blogs/store', [BlogController::class, 'store'])
+        ->name('blogs.store');
+
+    Route::post('/blogs/update/{id}', [BlogController::class, 'update'])
+        ->name('blogs.update');
+
+    Route::delete('/blogs/delete/{id}', [BlogController::class, 'destroy'])
+        ->name('blogs.destroy');
+
+    Route::post('/blogs/status', [BlogController::class, 'toggleStatus'])
+        ->name('blogs.status');    
 
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
@@ -106,8 +123,10 @@ Route::get('/', function () {
         ->where('is_active', 1)
         ->orderBy('sort_order')
         ->get();
-    
-    return view('welcome',compact('banners','services'));
+    $blogs = Blog::where('is_active', 1)
+        ->latest()
+        ->get();
+    return view('welcome',compact('banners','services','blogs'));
 });
 
 
