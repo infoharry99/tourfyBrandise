@@ -13,27 +13,24 @@
   {{-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
 
   <!-- Favicon -->
-  <link rel="icon" href="/tb.jpeg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="/tb.jpeg">
+<link rel="icon" href="http://tourfybrandise.infoharry.in/tb.jpeg" type="image/jpeg">
+<link rel="apple-touch-icon" href="http://tourfybrandise.infoharry.in/tb.jpeg">
 
-  <!-- Basic Meta -->
- 
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:title" content="Tourfy Brandise LLP">
+<meta property="og:description" content="Travel, Branding & Digital Solutions">
+<meta property="og:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="http://tourfybrandise.infoharry.in/">
+<meta property="og:type" content="website">
 
-  <!-- SEO -->
-  
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tourfy Brandise LLP">
+<meta name="twitter:description" content="Travel, Branding & Digital Solutions">
+<meta name="twitter:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-  <meta property="og:title" content="Tourfy Brandise LLP">
-  <meta property="og:description" content="Your short website description goes here">
-  <meta property="og:image" content="/tb.jpeg">
-  <meta property="og:url" content="http://tourfybrandise.infoharry.in/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Your Website Name">
-  <meta name="twitter:description" content="Your short website description goes here">
-  <meta name="twitter:image" content="/tb.jpeg">
 
 
   <!-- Fonts -->
