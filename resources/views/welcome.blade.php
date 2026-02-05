@@ -410,7 +410,7 @@
           {{-- Duplicate cards for seamless loop --}}
           @for ($i = 0; $i < 2; $i++)
             @foreach ($cards as $card)
-          <a href="{{ route('blog.details', ['id' => 4]) }}" class="block">
+          <a href="{{ route('blog.details', ['id' => 5]) }}" class="block">
 
               <div class="service-card">
                 <img src="{{ $card['img'] }}" alt="">
