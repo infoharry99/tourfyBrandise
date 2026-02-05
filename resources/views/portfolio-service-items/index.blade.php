@@ -6,40 +6,81 @@
         Items – {{ $service->service_name }}
     </h3>
 
-    {{-- Add Item --}}
-    <form method="POST" action="{{ route('admin.portfolio-service-items.store') }}" enctype="multipart/form-data">
+    {{-- ADD ITEM --}}
+    <form method="POST"
+          action="{{ route('admin.portfolio-service-items.store') }}"
+          enctype="multipart/form-data">
         @csrf
+
         <input type="hidden" name="portfolio_service_id" value="{{ $service->id }}">
 
-        <div class="row mb-3">
+        <div class="row mb-4">
+            <div class="col-md-6 mb-2">
+                <input type="text"
+                       name="title"
+                       class="form-control"
+                       placeholder="Title">
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <input type="url"
+                       name="visit_url"
+                       class="form-control"
+                       placeholder="Visit URL">
+            </div>
+
+            <div class="col-md-12 mb-2">
+                <textarea
+                    name="description"
+                    class="form-control"
+                    placeholder="Description (Optional)"
+                    rows="3"
+                ></textarea>
+            </div>
+
+            <div class="col-md-12 mb-2 alert alert-info py-2">
+                Upload <strong>either one Video or one Image</strong>. Do not upload both.
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <label for="video">Video (Optional)</label>
+                <input type="file"
+                       name="video"
+                       
+                       class="form-control"
+                       accept="video/mp4,video/quicktime">
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <label for="image">Image (Optional)</label>
+                <input type="file"
+                       name="image"
+                       
+                       class="form-control"
+                       accept="image/*">
+            </div>
+
+            
+
             <div class="col-md-3">
-                <input type="text" name="title" class="form-control" placeholder="Title">
-            </div>
-
-            <div class="col-md-4">
-                <input type="text" name="description" class="form-control" placeholder="Description">
-            </div>
-
-            <div class="col-md-3">
-                <input type="file" name="image" class="form-control" required>
-            </div>
-
-            <div class="col-md-2">
-                <button class="btn btn-primary w-100">Add</button>
+                <button class="btn btn-primary w-100">
+                    Add
+                </button>
             </div>
         </div>
     </form>
 
-    {{-- Items Table --}}
+    {{-- ITEMS TABLE --}}
     <table class="table table-bordered align-middle">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Image</th>
+                <th>Media</th>
                 <th>Title</th>
                 <th>Description</th>
+                <th>URL</th>
                 <th>Status</th>
-                <th width="">Actions</th>
+                <th >Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -47,15 +88,34 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
 
+                {{-- IMAGE / VIDEO --}}
                 <td>
-                    <img src="{{ asset($item->image) }}"
-                         width="80" class="rounded">
+                    @if($item->image)
+                        <img src="{{ asset($item->image) }}"
+                             width="80"
+                             class="rounded mb-1">
+                    @endif
+
+                    @if($item->video)
+                        <video width="80" controls>
+                            <source src="{{ asset($item->video) }}">
+                        </video>
+                    @endif
                 </td>
 
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->description }}</td>
 
-                {{-- Toggle --}}
+                <td>
+                    @if($item->visit_url)
+                        <a href="{{ $item->visit_url }}"
+                           target="_blank">
+                            Visit
+                        </a>
+                    @endif
+                </td>
+
+                {{-- STATUS TOGGLE --}}
                 <td>
                     <label class="switch">
                         <input type="checkbox"
@@ -66,41 +126,75 @@
                     </label>
                 </td>
 
+                {{-- ACTIONS --}}
                 <td>
-                    {{-- Update --}}
+                    {{-- UPDATE --}}
                     <form method="POST"
                           action="{{ route('admin.portfolio-service-items.update', $item->id) }}"
                           enctype="multipart/form-data"
-                          class="d-inline">
+                          class="mb-2">
                         @csrf
-                        
-                        <input type="text"
-                            name="title"
-                            value="{{ $item->title }}"
-                            class="form-control mb-1"
-                            placeholder="Title">
+                        @method('POST')
 
                         <input type="text"
+                               name="title"
+                               value="{{ $item->title }}"
+                               class="form-control mb-1">
+
+                        {{-- <input type="text"
+                               name="description"
+                               value="{{ $item->description }}"
+                               class="form-control mb-1"> --}}
+                        <textarea
                             name="description"
-                            value="{{ $item->description }}"
                             class="form-control mb-1"
-                            placeholder="Description">
-                        <input type="file" name="image" class="form-control mb-1">
-                        <button class="btn btn-sm btn-warning">Update</button>
+                            placeholder="Description (Optional)"
+                            rows="3"
+                        >{{ $item->description }}</textarea>
+       
+                        
+                        <input type="url"
+                               name="visit_url"
+                               value="{{ $item->visit_url }}"
+                               class="form-control mb-2"
+                               placeholder="Visit URL"
+                               >
+
+                        <div class=" alert alert-info py-2">
+                            Upload <strong>either one Video or one Image</strong>. Do not upload both.
+                        </div>  
+                        
+                        <label for="video">Video (Optional)</label>
+                        <input type="file"
+                               name="video"
+                               class="form-control mb-1"
+                               accept="video/mp4,video/quicktime">
+
+
+                        <label for="image">Image (Optional)</label>       
+                        <input type="file"
+                               name="image"
+                               class="form-control mb-2"
+                               accept="image/*">
+
+                        
+
+                        <button class="btn btn-sm btn-warning w-100">
+                            Update
+                        </button>
                     </form>
 
-                    {{-- Delete --}}
+                    {{-- DELETE --}}
                     <form method="POST"
-                          action="{{ route('admin.portfolio-service-items.destroy', $item->id) }}"
-                          class="d-inline">
+                          action="{{ route('admin.portfolio-service-items.destroy', $item->id) }}">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-sm btn-danger"
+
+                        <button class="btn btn-sm btn-danger w-100"
                                 onclick="return confirm('Delete this item?')">
                             Delete
                         </button>
                     </form>
-
                 </td>
             </tr>
             @endforeach
@@ -108,41 +202,41 @@
     </table>
 </div>
 
+{{-- SWITCH CSS --}}
 <style>
-    .switch {
-        position: relative;
-        width: 52px;
-        height: 26px;
-    }
-    .switch input { display: none; }
-    .slider {
-        position: absolute;
-        inset: 0;
-        background: #ccc;
-        border-radius: 30px;
-        transition: .3s;
-    }
-    .slider:before {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        left: 3px;
-        bottom: 3px;
-        background: #fff;
-        border-radius: 50%;
-        transition: .3s;
-    }
-    input:checked + .slider {
-        background: #22c55e;
-    }
-    input:checked + .slider:before {
-        transform: translateX(26px);
-    }
-
+.switch {
+    position: relative;
+    width: 52px;
+    height: 26px;
+}
+.switch input { display: none; }
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 30px;
+    transition: .3s;
+}
+.slider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .3s;
+}
+input:checked + .slider {
+    background: #22c55e;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
 </style>
 
-{{-- Status Toggle Script --}}
+{{-- STATUS TOGGLE SCRIPT --}}
 <script>
 document.querySelectorAll('.status-toggle').forEach(toggle => {
     toggle.addEventListener('change', function () {

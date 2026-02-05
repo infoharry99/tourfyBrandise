@@ -195,7 +195,7 @@
 
     <!-- /Hero Section -->
 
-    @php
+    {{-- @php
     $images = [
       // 'https://cdn.simpleicons.org/google',
       // 'https://cdn.simpleicons.org/meta',
@@ -254,15 +254,20 @@
 
     $row1 = array_slice($images, 0, 10);
     $row2 = array_slice($images, 10, 10);
+    @endphp --}}
+
+    @php
+        $logoImages = $logos->pluck('image')->toArray();
+
+        $row1 = array_slice($logoImages, 0, ceil(count($logoImages) / 2));
+        $row2 = array_slice($logoImages, ceil(count($logoImages) / 2));
     @endphp
 
 
 
-    <section class="trusted-section">
-      {{-- <p class="trusted-title">
-        Trusted by 500+ of the world's top brands
-      </p> --}}
 
+    {{-- <section class="trusted-section">
+     
       <div class="container section-title" data-aos="fade-up">
         <h2>Our Clients</h2>
         <p>
@@ -270,35 +275,71 @@
         </p>
       </div>
 
-      <!-- ROW 1 -->
+      
       <div class="logo-row">
         <div class="logo-track">
           @foreach($row1 as $img)
             <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
 
-          {{-- duplicate for seamless loop --}}
+         
           @foreach($row1 as $img)
             <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
         </div>
       </div>
 
-      <!-- ROW 2 -->
+     
       <div class="logo-row reverse">
         <div class="logo-track">
           @foreach($row2 as $img)
             <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
 
-          {{-- duplicate for seamless loop --}}
+       
           @foreach($row2 as $img)
             <img src="{{ $img }}" alt="" loading="lazy">
           @endforeach
         </div>
       </div>
-    </section>
+    </section> --}}
 
+    <section class="trusted-section">
+
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Our Clients</h2>
+            <p>Trusted by 500+ industry-leading brands across the globe</p>
+        </div>
+
+        {{-- ROW 1 --}}
+        <div class="logo-row">
+            <div class="logo-track">
+                @foreach($row1 as $img)
+                    <img src="{{ asset($img) }}" alt="Client Logo" loading="lazy">
+                @endforeach
+
+                {{-- duplicate for seamless loop --}}
+                @foreach($row1 as $img)
+                    <img src="{{ asset($img) }}" alt="Client Logo" loading="lazy">
+                @endforeach
+            </div>
+        </div>
+
+        {{-- ROW 2 --}}
+        <div class="logo-row reverse">
+            <div class="logo-track">
+                @foreach($row2 as $img)
+                    <img src="{{ asset($img) }}" alt="Client Logo" loading="lazy">
+                @endforeach
+
+                {{-- duplicate for seamless loop --}}
+                @foreach($row2 as $img)
+                    <img src="{{ asset($img) }}" alt="Client Logo" loading="lazy">
+                @endforeach
+            </div>
+        </div>
+
+    </section>
 
 
     <!-- About Section -->
@@ -370,7 +411,11 @@
               </p>
             </div>
             <div class="col-xl-3 cta-btn-container text-center">
-              <a class="cta-btn align-middle" href="#contact">Get Started Today</a>
+              <a 
+              href="https://wa.me/917982120764"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-btn align-middle" href="#contact">Get Started Today</a>
             </div>
           </div>
 
@@ -382,7 +427,7 @@
 
    
 
-    <section id="services" class="services-marquee">
+    {{-- <section id="services" class="services-marquee">
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
@@ -439,7 +484,7 @@
             @endphp
 
 
-          {{-- Duplicate cards for seamless loop --}}
+          
           @for ($i = 0; $i < 2; $i++)
             @foreach ($cards as $card)
           <a href="{{ route('blog.details', ['id' => 5]) }}" class="block">
@@ -465,11 +510,57 @@
         </div>
       </div>
 
+    </section> --}}
+    
+    <section id="services" class="services-marquee">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>What We Do</p>
+        </div>
+        <div class="marquee">
+          <div class="marquee-track">
+
+            {{-- Duplicate services for seamless loop --}}
+            @for ($i = 0; $i < 2; $i++)
+              @foreach ($skill_services as $service)
+
+                <a href="javascript:void(0)" class="block">
+
+                  <div class="service-card">
+
+                    {{-- SERVICE IMAGE --}}
+                    @if($service->image)
+                      <img src="{{ asset($service->image) }}" alt="{{ $service->title }}">
+                    @else
+                      <img src="https://via.placeholder.com/600x900?text=Service" alt="">
+                    @endif
+
+                    <div class="card-overlay"></div>
+
+                    {{-- SERVICE TITLE --}}
+                    <h3>{{ $service->title }}</h3>
+
+                    {{-- FEATURES / SKILLS --}}
+                    <div class="skills">
+                      @foreach ($service->features as $feature)
+                        <span>{{ $feature->feature }}</span>
+                      @endforeach
+                    </div>
+
+                  </div>
+
+                </a>
+
+              @endforeach
+            @endfor
+
+          </div>
+        </div>
+
     </section>
 
+
   
-
-
     <!-- /Services Section -->
 
     <!-- Portfolio Section -->
@@ -1176,7 +1267,7 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <p>+91 7982120764</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -1184,7 +1275,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <p>admin@tourfybrandise.com </p>
               </div>
             </div><!-- End Info Item -->
 
@@ -1246,10 +1337,25 @@
 
           <div class="social-links d-flex justify-content-center">
             {{-- <a href="#"><i class="bi bi-twitter-x"></i></a> --}}
-            <a href="#"><i class="bi bi-google"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a 
+                href="https://share.google/nxqcVNzZogesvJNoq"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <i class="bi bi-google"></i>
+            </a>
+            <a href="https://www.facebook.com/TourfyBrandise1" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/brandise_marketing/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/917982120764" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/tourfybrandise/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
         </div>
 

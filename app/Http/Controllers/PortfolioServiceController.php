@@ -12,7 +12,7 @@ class PortfolioServiceController extends Controller
     {
         $services = PortfolioService::with([
             'items' => function ($q) {
-                $q->where('is_active', 1)->orderBy('sort_order');
+                $q->where('is_active', 1)->orderBy('id', 'desc');
             }
         ])
         ->where('is_active', 1)

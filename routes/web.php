@@ -13,7 +13,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-
+use App\Http\Controllers\LogoController;
+use App\Http\Controllers\SkillServiceController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
@@ -23,7 +24,9 @@ use App\Http\Controllers\PortfolioServiceItemController;
 use App\Http\Controllers\ServiceController;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Logo;
 use App\Models\PortfolioService;
+use App\Models\SkillService;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/run', function () {
@@ -96,6 +99,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/blogs/status', [BlogController::class, 'toggleStatus'])
         ->name('blogs.status');    
 
+    Route::resource('logos', LogoController::class);
+
+    Route::get('/skill-services', [SkillServiceController::class, 'index'])->name('skill.services.index');
+    Route::post('/skill-services', [SkillServiceController::class, 'store'])->name('skill.services.store');
+    Route::put('/skill-services/{id}', [SkillServiceController::class, 'update'])->name('skill.services.update');
+    Route::delete('/skill-services/{id}', [SkillServiceController::class, 'destroy'])->name('skill.services.destroy');
+
+    Route::delete('/service-feature/{id}', [SkillServiceController::class, 'deleteFeature'])
+        ->name('service.feature.delete');
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
@@ -126,13 +138,17 @@ Route::get('/', function () {
     $blogs = Blog::where('is_active', 1)
         ->latest()
         ->get();
-    return view('welcome',compact('banners','services','blogs'));
+    $logos = Logo::latest()->get(); 
+    $skill_services = SkillService::with('features')->latest()->get();   
+    return view('welcome',compact('banners','services','blogs','logos','skill_services'));
 });
 
 
 Route::get('/about', function () {
     return view('about');
 });
+
+
 
 Route::get('/blog-details', [BlogController::class, 'show'])->name('blog.details');
 

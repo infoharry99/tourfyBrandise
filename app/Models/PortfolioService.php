@@ -25,8 +25,7 @@ class PortfolioService extends Model
     public $timestamps = true;
     public function items()
     {
-        return $this->hasMany(PortfolioServiceItem::class, 'portfolio_service_id')
-                    ->orderBy('sort_order');
+        return $this->hasMany(PortfolioServiceItem::class, 'portfolio_service_id');
     }
 
 }

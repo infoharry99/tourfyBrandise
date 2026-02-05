@@ -54,7 +54,7 @@
             <li><a href="/" >Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/#services">Services</a></li>
-            <li><a href="#portfolio" class="active">Portfolio</a></li>
+            <li><a href="/portfolio-section" class="active">Portfolio</a></li>
             {{-- <li><a href="#team">Team</a></li> --}}
             <li><a href="/#blog">Blogs</a></li>
             
@@ -68,7 +68,7 @@
 
     <main class="main">
         
-        <section id="portfolio" class="portfolio section mt-5">
+        <section id="portfolio" class="portfolio section mt-5 mb-5">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -95,32 +95,84 @@
                     </ul>
 
                     {{-- ITEMS --}}
-                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-4  isotope-container" data-aos="fade-up" data-aos-delay="200">
 
                         @foreach($services as $service)
                             @foreach($service->items as $item)
 
-                                <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ $service->slug }}">
-                                    <img src="{{ asset($item->image) }}"
+                                <div class="col-lg-4  col-md-6 portfolio-item isotope-item filter-{{ $service->slug }}">
+                                    
+                                    {{-- <img src="{{ asset($item->image) }}"
                                         class="img-fluid"
-                                        alt="{{ $item->title }}">
+                                        alt="{{ $item->title }}"> --}}
+                                     {{-- IMAGE --}}
+                                    @if($item->image)
+                                        <img src="{{ asset($item->image) }}"
+                                            class="img-fluid"
+                                            alt="{{ $item->title }}">
+                                    @endif  
+                                    
+                                    {{-- VIDEO --}}
+                                    @if($item->video)
+                                       <video
+                                            class="img-fluid portfolio-video"
+                                            autoplay
+                                            muted
+                                            loop
+                                            playsinline
+                                            poster="{{ $item->image ? asset($item->image) : '' }}"
+                                        >
+                                            <source src="{{ asset($item->video) }}" type="video/mp4">
+                                        </video>
+                                    @endif
+                                    <style>
+                                        /* .portfolio-video {
+                                            pointer-events: none;
+                                        } */
+                                        
+                                    </style>
 
                                     <div class="portfolio-info">
                                         <h4>{{ $item->title }}</h4>
                                         <p>{{ $item->description }}</p>
 
-                                        <a href="{{ asset($item->image) }}"
+                                        {{-- <a href="{{ asset($item->image) }}"
                                         title="{{ $item->title }}"
                                         data-gallery="portfolio-gallery-{{ $service->slug }}"
                                         class="glightbox preview-link">
                                             <i class="bi bi-zoom-in"></i>
-                                        </a>
+                                        </a> --}}
+
+                                         {{-- PREVIEW --}}
+                                        @if($item->image)
+                                            <a href="{{ asset($item->image) }}"
+                                            title="{{ $item->title }}"
+                                            data-gallery="portfolio-gallery-{{ $service->slug }}"
+                                            class="glightbox preview-link">
+                                                <i class="bi bi-zoom-in"></i>
+                                            </a>
+                                        @endif
+
+                                         @if($item->video)
+                                            <a href="{{ asset($item->video) }}"
+                                            title="{{ $item->title }}"
+                                            data-gallery="portfolio-gallery-{{ $service->slug }}"
+                                            class="glightbox preview-link ">
+                                                <i class="bi bi-play-circle"></i>
+                                            </a>
+                                        @endif
 
                                         {{-- OPTIONAL DETAILS PAGE --}}
-                                        {{-- <a href="{{ route('portfolio.details', $item->id) }}"
-                                        class="details-link">
+                                        @if($item->visit_url)
+                                        
+                                        <a href="{{$item->visit_url}}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="details-link">
                                         <i class="bi bi-link-45deg"></i>
-                                        </a> --}}
+                                        </a>
+                                        @endif
+
                                     </div>
                                 </div>
 
@@ -150,10 +202,26 @@
             </p>
 
             <div class="social-links d-flex justify-content-center">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+                {{-- <a href="#"><i class="bi bi-twitter-x"></i></a> --}}
+                <a 
+                    href="https://share.google/nxqcVNzZogesvJNoq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                <i class="bi bi-google"></i>
+                </a>
+                <a href="https://www.facebook.com/TourfyBrandise1" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/brandise_marketing/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://wa.me/917982120764" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/tourfybrandise/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+                </a>
             </div>
             </div>
 
@@ -269,6 +337,13 @@
       });
     });
   </script>
+
+    {{-- <script>
+        document.querySelectorAll('.portfolio-video').forEach(video => {
+            video.parentElement.addEventListener('mouseenter', () => video.play());
+            video.parentElement.addEventListener('mouseleave', () => video.pause());
+        });
+    </script> --}}
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>

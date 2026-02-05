@@ -18,6 +18,8 @@ class PortfolioServiceItem extends Model
         'image',
         'sort_order',
         'is_active',
+        'visit_url',
+        'video',
     ];
 
     protected $casts = [

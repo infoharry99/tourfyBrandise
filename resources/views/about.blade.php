@@ -54,7 +54,7 @@
             <li><a href="/" >Home</a></li>
             <li><a href="/about" class="active">About</a></li>
             <li><a href="/#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="/portfolio-section">Portfolio</a></li>
             {{-- <li><a href="#team">Team</a></li> --}}
             <li><a href="/#blog">Blogs</a></li>
             
@@ -83,9 +83,15 @@
 
           <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
             <p>
-             Tourfy Brandise LLP is a results-driven marketing and branding agency that helps businesses grow online through smart strategy, high-quality content, and performance-focused advertising. We specialize in social media marketing, branding, Meta & Google Ads, UGC content, SEO, and lead generation to improve visibility, conversions, and long-term brand value. Our approach is simple—strong creatives, targeted campaigns, and continuous optimization to deliver real growth.
+            Most brands don’t fail because their product is bad. They fail because their marketing is unclear, inconsistent, or poorly executed. Posting daily, running ads randomly, or copying competitors does not create growth. Real growth starts when a brand follows a clear systembuilt by a professional marketing agency. <br><br>
+            A modern digital marketing agency focuses on outcomes, not activities. Instead of chasing likes or views, it builds demand using digital marketing strategy, performance marketing, 
+            and growth marketing. Every campaign is designed to attract the right audience, build trust, and convert attention into real sales. <br><br>
+            Tourfy Brandise works with founders and brand owners who want predictable results from social media marketing, online advertising, and paid growth channels. from meta ads and Instagram ads to conversion-focused creatives, we build full-funnel systems that generate leads, inquiries, and revenue — not noise. <br><br>
+            Branding is another major reason brands struggle. When positioning is weak, customers compare you only on price. As a strategic branding agency, Tourfy Brandise helps brands build a strong identity, clear messaging, and premium perception. When branding and marketing work together, trust increases, and selling becomes easier. <br><br>
+            UGC-led content is also changing how brands win online. As a performance-focused ugc agency, we create authentic content that feels real and performs better than traditional ads. ugc combined with social media advertising reduces ad fatigue, lowers costs, and improves roi. <br><br>
+            At Tourfy Brandise, we don’t work like vendors — we work like growth partners. If you are looking for a reliable digital marketing agency, a results-driven advertising agency, or a team that understands branding, performance, and scale, we help you build systems that grow your brand consistently and sustainably.
             </p>
-            <ul>
+            {{-- <ul>
               <li>
                 <i class="bi bi-check2-circle"></i>
                 <span>Data-driven marketing strategies focused on real business growth and measurable results.</span>
@@ -98,14 +104,14 @@
                 <i class="bi bi-check2-circle"></i>
                 <span>High-quality creatives, targeted campaigns, and continuous optimization for better conversions.</span>
               </li>
-            </ul>
+            </ul> --}}
 
-          <div class="" data-aos="fade-up" data-aos-delay="200">
+          {{-- <div class="" data-aos="fade-up" data-aos-delay="200">
             <p>
             For the next-gen ventures and legacy brands ready to rewrite the rules, we design for impact and gear for growth. With insight, strategy and storytelling, we help future-focused brands reimagine how they connect, and where they’re going next.
             </p>
-            {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
-          </div>
+            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div> --}}
 
           </div>
 
@@ -137,10 +143,25 @@
 
           <div class="social-links d-flex justify-content-center">
             {{-- <a href="#"><i class="bi bi-twitter-x"></i></a> --}}
-            <a href="#"><i class="bi bi-google"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a 
+                href="https://share.google/nxqcVNzZogesvJNoq"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <i class="bi bi-google"></i>
+            </a>
+            <a href="https://www.facebook.com/TourfyBrandise1" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/brandise_marketing/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/917982120764" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/tourfybrandise/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
         </div>
 

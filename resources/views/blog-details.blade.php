@@ -199,10 +199,25 @@
 
           <div class="social-links d-flex justify-content-center">
             {{-- <a href="#"><i class="bi bi-twitter-x"></i></a> --}}
-            <a href="#"><i class="bi bi-google"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a 
+                href="https://share.google/nxqcVNzZogesvJNoq"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <i class="bi bi-google"></i>
+            </a>
+            <a href="https://www.facebook.com/TourfyBrandise1" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/brandise_marketing/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/917982120764" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/tourfybrandise/" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
         </div>
 
