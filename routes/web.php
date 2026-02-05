@@ -130,9 +130,11 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/portfolio-section', function () {
-//     return view('portfolio');
-// });
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/blog-details', [BlogController::class, 'show'])->name('blog.details');
 
 Route::get('/portfolio-section', [PortfolioServiceController::class, 'portfolioServices'])
         ->name('portfolio-services.index');

@@ -22,8 +22,8 @@
             </div>
         </div>
 
-        {{-- <textarea name="description" class="form-control mt-2" rows="3"
-                  placeholder="Full blog description"></textarea> --}}
+        <textarea name="description" class="form-control mt-2" rows="3"
+                  placeholder="Full blog description"></textarea>
     </form>
 
     {{-- BLOG LIST --}}
@@ -69,9 +69,9 @@
                                class="form-control mb-1" required>
                         <input type="text" name="short_description" value="{{ $blog->short_description }}"
                                class="form-control mb-1">
-                        {{-- <textarea name="description"
+                        <textarea name="description"
                             class="form-control mb-1"
-                            rows="4">{{ $blog->description }}</textarea>         --}}
+                            rows="4">{{ $blog->description }}</textarea>        
                         <input type="file" name="image" class="form-control mb-1">
                         <button class="btn btn-sm btn-warning w-100">Update</button>
                     </form>

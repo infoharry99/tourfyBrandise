@@ -39,8 +39,8 @@
 
 <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top"
-        style="box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);background-color: rgba(42, 44, 57, 0.9);"
-        >
+    style="box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);background-color: rgba(42, 44, 57, 0.9);"
+    >
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="index.html" class="logo d-flex align-items-center">
@@ -52,11 +52,11 @@
         <nav id="navmenu" class="navmenu">
             <ul>
             <li><a href="/" >Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/about" class="active">About</a></li>
             <li><a href="/#services">Services</a></li>
-            <li><a href="#portfolio" >Portfolio</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             {{-- <li><a href="#team">Team</a></li> --}}
-            <li><a href="/#blog" class="active">Blogs</a></li>
+            <li><a href="/#blog">Blogs</a></li>
             
             <li><a href="/#contact">Contact</a></li>
             </ul>
@@ -68,119 +68,57 @@
 
     <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container position-relative">
-        <h1>Blog Details</h1>
-        <p>{{$blog->title}}</p>
-        {{-- <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Blog Details</li>
-          </ol>
-        </nav> --}}
-      </div>
-    </div>
-    <!-- End Page Title -->
+        <!-- About Section -->
+    <section id="about" class="about section mt-5">
 
-    <div class="container">
-      <div class="row d-flex">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>Who we are</p>
+      </div><!-- End Section Title -->
 
-        <div class="col-lg-12">
+      <div class="container">
 
-          <!-- Blog Details Section -->
-          <section id="blog-details" class="blog-details section">
-            <div class="container">
+        <div class="row gy-4">
 
-              <article class="article">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+             Tourfy Brandise LLP is a results-driven marketing and branding agency that helps businesses grow online through smart strategy, high-quality content, and performance-focused advertising. We specialize in social media marketing, branding, Meta & Google Ads, UGC content, SEO, and lead generation to improve visibility, conversions, and long-term brand value. Our approach is simple—strong creatives, targeted campaigns, and continuous optimization to deliver real growth.
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-check2-circle"></i>
+                <span>Data-driven marketing strategies focused on real business growth and measurable results.</span>
+              </li>
+              <li>
+                <i class="bi bi-check2-circle"></i>
+                <span>Expertise in social media marketing, branding, SEO, and high-performance Meta & Google Ads.</span>
+              </li>
+              <li>
+                <i class="bi bi-check2-circle"></i>
+                <span>High-quality creatives, targeted campaigns, and continuous optimization for better conversions.</span>
+              </li>
+            </ul>
 
-                <div class="post-img">
-                  <img src="{{ $blog->image }}" alt="" class="img-fluid">
-                </div>
+          <div class="" data-aos="fade-up" data-aos-delay="200">
+            <p>
+            For the next-gen ventures and legacy brands ready to rewrite the rules, we design for impact and gear for growth. With insight, strategy and storytelling, we help future-focused brands reimagine how they connect, and where they’re going next.
+            </p>
+            {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
+          </div>
 
-                <h2 class="title">{{$blog->title}}</h2>
-                <div class="content">
-                  <p>
-                    {{$blog->short_description}}
-                  </p>
-                  <p>
-                    {{$blog->description}}
-                  </p>
-                </div>  
-                {{-- <div class="meta-top">
-                  <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
-                  </ul>
-                </div> --}}
-                <!-- End meta top -->
+          </div>
 
-                {{-- <div class="content">
-                  <p>
-                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                    Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                  </p>
+          <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/working-2.jpg" alt="" class="img-fluid">
+              </div>
 
-                  <p>
-                    Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
-                  </p>
-
-                  <blockquote>
-                    <p>
-                      Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut. Aut eos aliquam doloribus minus autem quos.
-                    </p>
-                  </blockquote>
-
-                  <p>
-                    Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit perspiciatis. Voluptate ex rerum assumenda dolores nihil quaerat.
-                    Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti velit quisquam rerum. Omnis dolorum exercitationem harum qui qui blanditiis neque.
-                    Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto voluptatem magni. Vel magnam quod et tempora deleniti error rerum nihil tempora.
-                  </p>
-
-                  <h3>Et quae iure vel ut odit alias.</h3>
-                  <p>
-                    Officiis animi maxime nulla quo et harum eum quis a. Sit hic in qui quos fugit ut rerum atque. Optio provident dolores atque voluptatem rem excepturi molestiae qui. Voluptatem laborum omnis ullam quibusdam perspiciatis nulla nostrum. Voluptatum est libero eum nesciunt aliquid qui.
-                    Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
-                    Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
-                  </p>
-                  <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid" alt="">
-
-                  <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
-                  <p>
-                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
-                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
-                  </p>
-                  <p>
-                    Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
-                  </p>
-
-                </div> --}}
-                <!-- End post content -->
-
-                {{-- <div class="meta-bottom">
-                  <i class="bi bi-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Business</a></li>
-                  </ul>
-
-                  <i class="bi bi-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">Tips</a></li>
-                    <li><a href="#">Marketing</a></li>
-                  </ul>
-                </div> --}}
-                <!-- End meta bottom -->
-
-              </article>
-
-            </div>
-          </section>
-          
         </div>
+
       </div>
-    </div>
+
+    </section>
+    <!-- /About Section -->
 
   </main>
 

@@ -134,28 +134,12 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="/portfolio-section">Portfolio</a></li>
-          {{-- <li><a href="/slider">Team</a></li> --}}
-          {{-- <li><a href="blog.html">Blog</a></li> --}}
-          {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> --}}
+          
+          <li><a href="#blog">Blogs</a></li>
+         
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -167,51 +151,6 @@
   <main class="main">
 
     <!-- Hero Section -->
-    
-
-    {{-- <section id="hero" class="hero section dark-background">
-
-      <div class="swiper hero-swiper hero-turn">
-
-        <div class="swiper-wrapper">
-
-          @foreach($banners as $banner)
-            <div class="swiper-slide hero-slide"
-                style="background-image: url('{{ asset($banner->image) }}');">
-
-              <div class="carousel-container">
-
-                @if($banner->title)
-                  <h2 class="animate__animated animate__fadeInDown">
-                    {!! $banner->title !!}
-                  </h2>
-                @endif
-
-                @if($banner->description)
-                  <p class="animate__animated animate__fadeInUp">
-                    {{ $banner->description }}
-                  </p>
-                @endif
-
-                @if($banner->link)
-                  <a href="{{ $banner->link }}"
-                    class="btn-get-started animate__animated animate__fadeInUp">
-                    Read More
-                  </a>
-                @endif
-
-              </div>
-            </div>
-          @endforeach
-
-        </div>
-
-        <!-- Pagination (optional) -->
-        <div class="swiper-pagination"></div>
-
-      </div>
-
-    </section> --}}
 
     <section class="hero">
       <div class="hero-container">
@@ -331,13 +270,13 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    {{-- <section id="about" class="about section">
 
-      <!-- Section Title -->
+      
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Who we are</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container">
 
@@ -379,152 +318,10 @@
 
       </div>
 
-    </section>
+    </section> --}}
     <!-- /About Section -->
 
-    <!-- Features Section -->
-    {{-- <section id="features" class="features section">
-
-      <div class="container">
-
-        <ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
-          <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-              <i class="bi bi-binoculars"></i>
-              <h4 class="d-none d-lg-block">Modi sit est dela pireda nest</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-              <i class="bi bi-box-seam"></i>
-              <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-              <i class="bi bi-brightness-high"></i>
-              <h4 class="d-none d-lg-block">Pariatur explica nitro dela</h4>
-            </a>
-          </li>
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
-              <i class="bi bi-command"></i>
-              <h4 class="d-none d-lg-block">Nostrum qui dile node</h4>
-            </a>
-          </li>
-        </ul><!-- End Tab Nav -->
-
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="tab-pane fade active show" id="features-tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i>
-                    <spab>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</spab>
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit</span>.</li>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-1.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content Item -->
-
-          <div class="tab-pane fade" id="features-tab-2">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-2.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content Item -->
-
-          <div class="tab-pane fade" id="features-tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
-                </ul>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-3.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content Item -->
-
-          <div class="tab-pane fade" id="features-tab-4">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-4.jpg" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div><!-- End Tab Content Item -->
-
-        </div>
-
-      </div>
-
-    </section> --}}
-    <!-- /Features Section -->
+   
 
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section dark-background">
@@ -551,117 +348,9 @@
     </section>
     <!-- /Call To Action Section -->
 
-    <!-- Services Section -->
-   <!-- Services Section -->
-    {{-- <section id="services" class="services section">
+   
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>What We Do</p>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container">
-        <div class="row gy-4">
-
-          <!-- Service 1 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-palette" style="color:#0dcaf0;"></i>
-              </div>
-              <h3>Creative Design Services</h3>
-              <p>
-                High-impact ad creatives, social media designs, presentations, illustrations,
-                packaging, and visual assets crafted to make your brand stand out.
-              </p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <!-- Service 2 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-award" style="color:#fd7e14;"></i>
-              </div>
-              <h3>Branding & Identity</h3>
-              <p>
-                Strategic branding solutions including brand identity, logo design,
-                brand systems, and consistent communication across all platforms.
-              </p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <!-- Service 3 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-text" style="color:#20c997;"></i>
-              </div>
-              <h3>Content & Copywriting</h3>
-              <p>
-                Conversion-focused copywriting including ad copies, website content,
-                email marketing, and storytelling that drives engagement and action.
-              </p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <!-- Service 4 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-camera-video" style="color:#df1529;"></i>
-              </div>
-              <h3>Video & Production</h3>
-              <p>
-                Professional video production, motion design, immersive visuals,
-                and UGC content optimized for high engagement and performance.
-              </p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <!-- Service 5 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-cpu" style="color:#6610f2;"></i>
-              </div>
-              <h3>AI-Powered Creative & Consulting</h3>
-              <p>
-                AI-driven creatives, automation, and strategic consulting to improve
-                efficiency, optimize campaigns, and scale digital growth.
-              </p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <!-- Service 6 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-graph-up-arrow" style="color:#f3268c;"></i>
-              </div>
-              <h3>Marketing & Growth Strategy</h3>
-              <p>
-                Performance-driven marketing strategies including Meta & Google Ads,
-                SEO, lead generation, and continuous optimization for measurable growth.
-              </p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-        </div>
-      </div>
-
-    </section> --}}
-    <!-- End Services Section -->
-
-    <section class="services-marquee">
+    <section id="services" class="services-marquee">
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Services</h2>
@@ -670,34 +359,59 @@
       <div class="marquee">
         <div class="marquee-track">
 
-          @php
-          $cards = [
-            [
-              'title' => 'Email Design',
-              'img' => 'https://picsum.photos/id/1011/600/900',
-              'skills' => ['Graphic design concepts', 'Campaign concepts', 'Ad copywriting']
-            ],
-            [
-              'title' => 'Motion Design',
-              'img' => 'https://picsum.photos/id/1025/600/900',
-              'skills' => ['Animation', 'Storyboarding', 'Visual effects']
-            ],
-            [
-              'title' => 'Video Production',
-              'img' => 'https://picsum.photos/id/1035/600/900',
-              'skills' => ['Filming', 'Editing', 'Post production']
-            ],
-            [
-              'title' => 'Marketing Strategy',
-              'img' => 'https://picsum.photos/id/1041/600/900',
-              'skills' => ['Digital ad concepts', 'Growth strategy', 'Brand positioning']
-            ],
-          ];
-          @endphp
+         @php
+            $cards = [
+                [
+                    'title' => 'Email Design',
+                    'img' => 'https://picsum.photos/id/1011/600/900',
+                    'skills' => ['Graphic design concepts', 'Campaign concepts', 'Ad copywriting']
+                ],
+                [
+                    'title' => 'Motion Design',
+                    'img' => 'https://picsum.photos/id/1025/600/900',
+                    'skills' => ['Animation', 'Storyboarding', 'Visual effects']
+                ],
+                [
+                    'title' => 'Video Production',
+                    'img' => 'https://picsum.photos/id/1035/600/900',
+                    'skills' => ['Filming', 'Editing', 'Post production']
+                ],
+                [
+                    'title' => 'Marketing Strategy',
+                    'img' => 'https://picsum.photos/id/1041/600/900',
+                    'skills' => ['Digital ad concepts', 'Growth strategy', 'Brand positioning']
+                ],
+
+                // ✅ New 4 services
+                [
+                    'title' => 'Brand Identity',
+                    'img' => 'https://picsum.photos/id/1050/600/900',
+                    'skills' => ['Logo design', 'Visual identity', 'Brand guidelines']
+                ],
+                [
+                    'title' => 'Social Media Marketing',
+                    'img' => 'https://picsum.photos/id/1062/600/900',
+                    'skills' => ['Content planning', 'Community management', 'Paid ads']
+                ],
+                [
+                    'title' => 'UI / UX Design',
+                    'img' => 'https://picsum.photos/id/1076/600/900',
+                    'skills' => ['Wireframing', 'User research', 'Prototyping']
+                ],
+                [
+                    'title' => 'Web Development',
+                    'img' => 'https://picsum.photos/id/1084/600/900',
+                    'skills' => ['Frontend development', 'Backend systems', 'Performance optimization']
+                ],
+            ];
+            @endphp
+
 
           {{-- Duplicate cards for seamless loop --}}
           @for ($i = 0; $i < 2; $i++)
             @foreach ($cards as $card)
+          <a href="{{ route('blog.details', ['id' => 4]) }}" class="block">
+
               <div class="service-card">
                 <img src="{{ $card['img'] }}" alt="">
                 
@@ -711,6 +425,8 @@
                   @endforeach
                 </div>
               </div>
+
+          </a>  
             @endforeach
           @endfor
 
@@ -719,6 +435,7 @@
 
     </section>
 
+  
 
 
     <!-- /Services Section -->
@@ -728,7 +445,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Web Dev Services</h2>
+        <h2>Web Development Services</h2>
         <p>
           End-to-End Digital Solutions
         </p>
@@ -741,127 +458,13 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            {{-- <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li> --}}
-            
+        
             @foreach($services as $service)
               <li data-filter="*" class="filter-active"> {{ $service->service_name }}</li>
             @endforeach
-            {{-- <li data-filter="*" class="filter-active">Performance Marketing</li>
-            <li data-filter="*" class="filter-active">Search Engine Optimization (SEO)</li>
-            <li data-filter="*" class="filter-active">Influencer Marketing</li>
-            <li data-filter="*" class="filter-active">Website Design & Development</li>
-            <li data-filter="*" class="filter-active">Marketing Strategy</li>
-            <li data-filter="*" class="filter-active">Social Media Creative</li>
-            <li data-filter="*" class="filter-active">Concept Creation</li>
-            <li data-filter="*" class="filter-active">Ad Creative</li>
-            <li data-filter="*" class="filter-active">Brand Identity</li>
-            <li data-filter="*" class="filter-active">Packaging & Merch Designing</li>
-            <li data-filter="*" class="filter-active">Video Production</li>
-            <li data-filter="*" class="filter-active">Motion Design</li>
-            <li data-filter="*" class="filter-active">E-commerce Growth</li>
-            <li data-filter="*" class="filter-active">Creative Consultancy</li>
-            <li data-filter="*" class="filter-active">Retail Experience Design</li>
-            <li data-filter="*" class="filter-active">Answer Engine Optimization (AEO)</li> --}}
+        
           </ul>
-          <!-- End Portfolio Filters -->
-
-          {{-- <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div> --}}
-          <!-- End Portfolio Container -->
+          
 
         </div>
 
@@ -911,9 +514,10 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" class="testimonial-img" alt="">
+                <h3>Rohit Sharma</h3>
+                <h4>CEO &amp; Founder</h4>
+
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -929,9 +533,11 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img" alt="">
+                <h3>Arjun Mehta</h3>
+                <h4>Managing Director</h4>
+
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -948,9 +554,10 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-img" alt="">
+                <h3>Priya Verma</h3>
+                <h4>Marketing Head</h4>
+
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -966,9 +573,10 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img" alt="">
+                <h3>Ananya Singh</h3>
+                <h4>Startup Founder</h4>
+
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -985,9 +593,10 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
+                <img src="https://randomuser.me/api/portraits/men/58.jpg" class="testimonial-img" alt="">
+                <h3>Vikram Malhotra</h3>
                 <h4>Entrepreneur</h4>
+
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
@@ -1010,8 +619,8 @@
     </section><!-- /Testimonials Section -->
 
      <!-- Blogs Section -->
-   <section class="flex-section">
-     <!-- Section Title -->
+    <section id="blog" class="flex-section">
+      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Blogs</h2>
         <p>Work, ideas, and impact.</p>
@@ -1020,9 +629,12 @@
       <div class="flex-container">
 
         @foreach($blogs as $index => $blog)
+          <a href="{{ route('blog.details', ['id' => $blog->id]) }}" class="block">
           <div class="flex-card 
             {{ $index == 1 ? 'light' : '' }} 
-            {{ $index == 2 ? 'lime' : '' }}">
+            {{ $index == 2 ? 'lime' : '' }}"
+             
+            >
 
             <div class="flex-image">
               <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}">
@@ -1040,6 +652,8 @@
             </div>
 
           </div>
+        </a>
+
         @endforeach
 
       </div>
@@ -1413,7 +1027,7 @@
       <!-- SUPERSIDE ROW -->
       <div class="comparison-row featured">
         <div class="row-title">
-          <h3>Tourfy Brandish</h3>
+          <h3>Tourfy Brandise</h3>
           <p>
             Work with the top 1% of global creative talent,
             recruited from the best brands and agencies.
@@ -1599,7 +1213,8 @@
           </p>
 
           <div class="social-links d-flex justify-content-center">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            {{-- <a href="#"><i class="bi bi-twitter-x"></i></a> --}}
+            <a href="#"><i class="bi bi-google"></i></a>
             <a href="#"><i class="bi bi-facebook"></i></a>
             <a href="#"><i class="bi bi-instagram"></i></a>
             <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -1718,6 +1333,38 @@
         },
       });
     });
+  </script>
+
+  {{-- service marquee --}}
+  <script>
+      const marquee = document.querySelector('.marquee');
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      marquee.addEventListener('mousedown', (e) => {
+          isDown = true;
+          marquee.classList.add('active');
+          startX = e.pageX - marquee.offsetLeft;
+          scrollLeft = marquee.scrollLeft;
+      });
+
+      marquee.addEventListener('mouseleave', () => {
+          isDown = false;
+      });
+
+      marquee.addEventListener('mouseup', () => {
+          isDown = false;
+      });
+
+      marquee.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - marquee.offsetLeft;
+          const walk = (x - startX) * 1.5; // scroll speed
+          marquee.scrollLeft = scrollLeft - walk;
+      });
   </script>
 
   <!-- Main JS File -->

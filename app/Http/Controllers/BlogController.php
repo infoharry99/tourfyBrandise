@@ -45,6 +45,25 @@ class BlogController extends Controller
         return back()->with('success', 'Blog added successfully');
     }
 
+   public function show(Request $request)
+    {
+        $id = $request->query('id');
+
+        if (!$id) {
+            abort(404);
+        }
+
+        $blog = Blog::find($id);
+
+        if (!$blog) {
+            abort(404);
+        }
+
+        return view('blog-details', compact('blog'));
+    }
+
+
+
     public function update(Request $request, $id)
     {
         $blog = Blog::findOrFail($id);
