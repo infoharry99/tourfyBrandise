@@ -76,6 +76,9 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   {{-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> --}}
 
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -272,7 +275,6 @@
             </div>
         </section>
 
-
     </main>
 
     <footer id="footer" class="footer dark-background">
@@ -351,10 +353,10 @@
             <h4 class="footer-heading">Main</h4>
             <ul class="footer-list">
                 <li><a href="/#services">Our work</a></li>
-                <li><a href="/#services">Our people</a></li>
+                <li><a href="/#testimonials">Our people</a></li>
                 <li><a href="/about">About us</a></li>
-                <li><a href="/#services">Pricing</a></li>
-                <li><a href="/#services">Careers</a></li>
+                {{-- <li><a href="/#services">Pricing</a></li> --}}
+                {{-- <li><a href="/#services">Careers</a></li> --}}
             </ul>
             </div>
 
@@ -363,10 +365,10 @@
             <h4 class="footer-heading">Learn</h4>
             <ul class="footer-list">
                 <li><a href="/#blog">Blog</a></li>
-                <li><a href="/#services">Guides</a></li>
+                {{-- <li><a href="/#services">Guides</a></li>
                 <li><a href="/#services">Reports</a></li>
                 <li><a href="/#services">Customer Stories</a></li>
-                <li><a href="/#services">What’s new</a></li>
+                <li><a href="/#services">What’s new</a></li> --}}
             </ul>
             </div>
 

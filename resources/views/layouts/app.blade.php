@@ -3,7 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourfy Brandise - Dashboard</title>
+      <!-- ✅ BASIC SEO -->
+<title>Tourfy Brandise LLP - Best Marketing and Branding Agency in India</title>
+
+<meta name="title" content="Tourfy Brandise LLP - Best Marketing and Branding Agency in India">
+<meta name="description" content="Tourfy Brandise LLP is a results-driven marketing and branding agency helping businesses grow through strategy, creativity, and performance-focused digital marketing.">
+<meta name="keywords" content="marketing agency india, branding agency delhi, digital marketing company, Tourfy Brandise">
+<meta name="author" content="Tourfy Brandise LLP">
+
+<!-- ✅ MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✅ OPEN GRAPH (Facebook / LinkedIn / WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tourfybrandise.com/">
+<meta property="og:title" content="Tourfy Brandise LLP - Marketing & Branding Agency">
+<meta property="og:description" content="Results-driven marketing and branding agency helping businesses grow.">
+<meta property="og:image" content="https://www.tourfybrandise.com/logo.png">
+<meta property="og:site_name" content="Tourfy Brandise LLP">
+
+<!-- ✅ TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tourfy Brandise LLP">
+<meta name="twitter:description" content="Marketing and Branding Agency in India">
+<meta name="twitter:image" content="https://www.tourfybrandise.com/logo.png">
+
+<!-- ✅ CANONICAL -->
+<link rel="canonical" href="https://www.tourfybrandise.com/">
+
+  <!-- Favicons -->
+  {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
+  {{-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
+
+  <!-- Favicon -->
+<link rel="icon" href="http://tourfybrandise.infoharry.in/tb.jpeg" type="image/jpeg">
+<link rel="apple-touch-icon" href="http://tourfybrandise.infoharry.in/tb.jpeg">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:title" content="Tourfy Brandise LLP">
+<meta property="og:description" content="Branding Agency & Digital Solutions">
+<meta property="og:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="http://tourfybrandise.infoharry.in/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tourfy Brandise LLP">
+<meta name="twitter:description" content="Travel, Branding & Digital Solutions">
+<meta name="twitter:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
+
+
+<meta name="description" content="Tourfy Brandise LLP is a marketing and branding company helping businesses grow.">
+
+<meta property="og:site_name" content="Tourfy Brandise LLP">
+<meta property="og:title" content="Tourfy Brandise LLP">
+<meta property="og:description" content="Marketing and Branding Services">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap JS Bundle (with Popper) -->
@@ -1067,6 +1123,19 @@
                     <span class="nav-text">Contact Inquiries</span>
                 </a>
             </div>
+
+            <div class="nav-item">
+                <a href="{{ route('admin.testimonials.index') }}" class="nav-link {{ Request::is('admin/testimonials*') ? 'active' : '' }}" >
+                    <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+
+                    </span>
+                    <span class="nav-text">Testimonial</span>
+                </a>
+            </div>
+
 
             
 

@@ -26,6 +26,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PortfolioServiceController;
 use App\Http\Controllers\PortfolioServiceItemController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\HomepageSection;
@@ -33,6 +34,7 @@ use App\Models\HomepageSectionImage;
 use App\Models\Logo;
 use App\Models\PortfolioService;
 use App\Models\SkillService;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/run', function () {
@@ -154,6 +156,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::delete('/creators/{id}', [CreatorController::class, 'destroy'])
         ->name('creators.destroy');
+    
+    
+    Route::get('/testimonials', [TestimonialController::class, 'index'])
+        ->name('testimonials.index');
+
+    Route::post('/testimonials', [TestimonialController::class, 'store'])
+        ->name('testimonials.store');
+
+    Route::put('/testimonials/{id}', [TestimonialController::class, 'update'])
+        ->name('testimonials.update');
+
+    Route::delete('/testimonials/{id}', [TestimonialController::class, 'destroy'])
+        ->name('testimonials.destroy');    
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
@@ -188,8 +203,9 @@ Route::get('/', function () {
     $skill_services = SkillService::with('features')->latest()->get();  
     $hero = HomepageSection::where('status', 1)->first();
     $hero_images = HomepageSectionImage::orderBy('sort_order')->get();
+    $testimonials = Testimonial::where('status', 1)->latest()->get();
    
-    return view('welcome',compact('banners','services','blogs','logos','skill_services','hero','hero_images'));
+    return view('welcome',compact('banners','services','blogs','logos','skill_services','hero','hero_images','testimonials'));
 });
 
 

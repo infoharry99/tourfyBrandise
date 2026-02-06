@@ -698,7 +698,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Testimonials</h2>
-        <p>What they are saying about us</p>
+        <p>Why Clients Choose Us</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -731,7 +731,7 @@
           </script>
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
+            {{-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="https://randomuser.me/api/portraits/men/75.jpg" class="testimonial-img" alt="">
                 <h3>Rohit Sharma</h3>
@@ -748,86 +748,41 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div> --}}
+            @foreach($testimonials as $testimonial)
+              <div class="swiper-slide">
+                <div class="testimonial-item">
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img" alt="">
-                <h3>Arjun Mehta</h3>
-                <h4>Managing Director</h4>
+                  <img src="{{ $testimonial->image_path 
+                              ? asset($testimonial->image_path) 
+                              : asset('assets/img/default-user.png') }}"
+                      class="testimonial-img"
+                      alt="{{ $testimonial->name }}">
 
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <h3>{{ $testimonial->name }}</h3>
+                  <h4>{{ $testimonial->designation }}</h4>
+
+                  <div class="stars">
+                    @for($i = 1; $i <= 5; $i++)
+                      <i class="bi {{ $i <= $testimonial->rating ? 'bi-star-fill' : 'bi-star' }}"></i>
+                    @endfor
+                  </div>
+
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>
+                      {{ $testimonial->review }}
+                    </span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+
                 </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>
-                    Thanks to Superside, we’ve elevated ourselves. We’ve changed marketing in the industry by acting as more of a marketing agency for our brands, and streamlining that into robust marketing campaigns that move the needle.
-
-                  </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
               </div>
-            </div><!-- End testimonial item -->
+            @endforeach
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-img" alt="">
-                <h3>Priya Verma</h3>
-                <h4>Marketing Head</h4>
+            <!-- End testimonial item -->
 
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>
-                   Superside took the time to learn about our company, applied their insights from various design projects and sought to meet our needs, even if it meant going through some additional edits.
-                  </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img" alt="">
-                <h3>Ananya Singh</h3>
-                <h4>Startup Founder</h4>
-
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>
-                   The biggest benefit is time savings. The sheer volume Superside is able to produce is just amazing. If you think about 1-2 independent contractors vs. a team, it’s not a fair comparison
-
-                  </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://randomuser.me/api/portraits/men/58.jpg" class="testimonial-img" alt="">
-                <h3>Vikram Malhotra</h3>
-                <h4>Entrepreneur</h4>
-
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>
-                    We have access and responsiveness to meet our business-critical needs. The combination of quality, speed and 24/7 support allows us to be agile and efficient.
-                  </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+            
 
           </div>
           <div class="swiper-pagination"></div>
@@ -835,7 +790,8 @@
 
       </div>
 
-    </section><!-- /Testimonials Section -->
+    </section>
+    <!-- /Testimonials Section -->
 
      <!-- Blogs Section -->
     <section id="blog" class="flex-section">
@@ -1527,11 +1483,11 @@
         <div class="col-lg-2 col-md-6">
           <h4 class="footer-heading">Main</h4>
           <ul class="footer-list">
-            <li><a href="#services">Our work</a></li>
-            <li><a href="#services">Our people</a></li>
+            <li><a href="/creator">Our work</a></li>
+            <li><a href="#testimonials">Our people</a></li>
             <li><a href="/about">About us</a></li>
-            <li><a href="#services">Pricing</a></li>
-            <li><a href="#services">Careers</a></li>
+            {{-- <li><a href="#services">Pricing</a></li> --}}
+            {{-- <li><a href="#services">Careers</a></li> --}}
           </ul>
         </div>
 
@@ -1540,10 +1496,10 @@
           <h4 class="footer-heading">Learn</h4>
           <ul class="footer-list">
             <li><a href="#blog">Blog</a></li>
-            <li><a href="#services">Guides</a></li>
-            <li><a href="#services">Reports</a></li>
-            <li><a href="#services">Customer Stories</a></li>
-            <li><a href="#services">What’s new</a></li>
+            {{-- <li><a href="#services">Guides</a></li> --}}
+            {{-- <li><a href="#services">Reports</a></li> --}}
+            {{-- <li><a href="#services">Customer Stories</a></li> --}}
+            {{-- <li><a href="#services">What’s new</a></li> --}}
           </ul>
         </div>
 
