@@ -18,6 +18,8 @@ use App\Http\Controllers\SkillServiceController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\CreatorController;
 use App\Http\Controllers\HomepageSectionController;
 use App\Http\Controllers\HomepageSectionImageController;
 use App\Http\Controllers\PortfolioController;
@@ -135,8 +137,23 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::delete('/homepage-section-images/{id}',
         [HomepageSectionImageController::class, 'destroy']
-    )->name('homepage.section.images.destroy');    
+    )->name('homepage.section.images.destroy');  
+    
+    // Admin
+    Route::get('/contact-messages', [ContactMessageController::class, 'adminIndex'])->name('contact-messages.index');
+    Route::get('/contact-messages/{id}', [ContactMessageController::class, 'show'])->name('contact-message.show');
 
+      Route::get('/creators', [CreatorController::class, 'index'])
+        ->name('creators.index');
+
+    Route::post('/creators', [CreatorController::class, 'store'])
+        ->name('creators.store');
+
+    Route::put('/creators/{id}', [CreatorController::class, 'update'])
+        ->name('creators.update');
+
+    Route::delete('/creators/{id}', [CreatorController::class, 'destroy'])
+        ->name('creators.destroy');
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
@@ -170,14 +187,26 @@ Route::get('/', function () {
     $logos = Logo::latest()->get(); 
     $skill_services = SkillService::with('features')->latest()->get();  
     $hero = HomepageSection::where('status', 1)->first();
-    $hero_images = HomepageSectionImage::orderBy('sort_order')->get(); 
+    $hero_images = HomepageSectionImage::orderBy('sort_order')->get();
+   
     return view('welcome',compact('banners','services','blogs','logos','skill_services','hero','hero_images'));
 });
+
+
+    // Frontend
+    // Route::get('/contact', [ContactMessageController::class, 'index']);
+    Route::post('/contact', [ContactMessageController::class, 'store'])
+     ->name('contact.store');
+
+
+
 
 
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/creator', [CreatorController::class, 'userindex']);
 
 
 

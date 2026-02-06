@@ -137,6 +137,7 @@
           <li><a href="/about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="/portfolio-section">Portfolio</a></li>
+            <li><a href="/creator" >Creator</a></li>
           
           <li><a href="#blog">Blogs</a></li>
          
@@ -1303,15 +1304,23 @@
 
           <div class="col-lg-4">
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <a 
+                href="https://www.google.com/maps?q=First+Floor,+C-301,+60+Feet+Rd,+Mahavir+Enclave+Part+2,+New+Delhi,+110059"
+                target="_blank"
+                class="d-flex text-decoration-none text-dark"
+              >
               <i class="bi bi-geo-alt flex-shrink-0"></i>
+              </a>
               <div>
                 <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>First Floor, C-301, 60 Feet Rd, Mahavir Enclave Part 2, Mahavir Enclave Part 3, Mahavir Enclave, New Delhi, Delhi, 110059</p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
+              <a href="tel:+917982120764" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+              </a>
               <div>
                 <h3>Call Us</h3>
                 <p>+91 7982120764</p>
@@ -1319,46 +1328,70 @@
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
+              <a href="mailto:admin@tourfybrandise.com" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+              </a>
               <div>
                 <h3>Email Us</h3>
                 <p>admin@tourfybrandise.com </p>
               </div>
-            </div><!-- End Info Item -->
+            
+            </div>
+            <!-- End Info Item -->
 
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger mt-3">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form action="{{ route('contact.store') }}" method="POST" data-aos="fade-up" data-aos-delay="200">
+               @csrf 
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="name" class="form-control"
+                   placeholder="Your Name" value="{{ old('name') }}" required>
                 </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                <div class="col-md-6">
+                    <input type="email" name="email" class="form-control"
+                          placeholder="Your Email" value="{{ old('email') }}" required>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    <input type="text" name="subject" class="form-control"
+                          placeholder="Subject" value="{{ old('subject') }}" required>
                 </div>
+
+                <div class="col-md-12">
+                    <textarea name="message" class="form-control" rows="6"
+                              placeholder="Message" required>{{ old('message') }}</textarea>
+                </div>  
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
+                  {{-- <div class="loading">Loading</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div> --}}
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit" class="btn btn-primary w-100">Send Message</button>
                 </div>
 
               </div>
             </form>
-          </div><!-- End Contact Form -->
+          </div>
+          <!-- End Contact Form -->
 
         </div>
 

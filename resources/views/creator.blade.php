@@ -54,10 +54,8 @@
             <li><a href="/" >Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="//#services">Services</a></li>
-            <li><a href="/portfolio-section" class="active">Portfolio</a></li>
-            <li><a href="/creator">Creator</a></li>
-
-            {{-- <li><a href="#team">Team</a></li> --}}
+            <li><a href="/portfolio-section">Portfolio</a></li>
+            <li><a href="/creator" class="active">Creator</a></li>
             <li><a href="/#blog">Blogs</a></li>
             
             <li><a href="/#contact">Contact</a></li>
@@ -70,9 +68,9 @@
 
     <main class="main">
         
-        <section id="portfolio" class="portfolio section mt-5 mb-5">
+        {{-- <section id="portfolio" class="portfolio section mt-5 mb-5">
 
-            <!-- Section Title -->
+          
             <div class="container section-title" data-aos="fade-up">
                 <h2>Portfolio</h2>
                 <p>What we've done</p>
@@ -85,7 +83,6 @@
                     data-layout="masonry"
                     data-sort="original-order">
 
-                    {{-- FILTERS --}}
                     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                         <li data-filter="*" class="filter-active">All</li>
 
@@ -96,7 +93,7 @@
                         @endforeach
                     </ul>
 
-                    {{-- ITEMS --}}
+                    
                     <div class="row gy-4  isotope-container" data-aos="fade-up" data-aos-delay="200">
 
                         @foreach($services as $service)
@@ -104,17 +101,14 @@
 
                                 <div class="col-lg-4  col-md-6 portfolio-item isotope-item filter-{{ $service->slug }}">
                                     
-                                    {{-- <img src="{{ asset($item->image) }}"
-                                        class="img-fluid"
-                                        alt="{{ $item->title }}"> --}}
-                                     {{-- IMAGE --}}
+                                    
                                     @if($item->image)
                                         <img src="{{ asset($item->image) }}"
                                             class="img-fluid"
                                             alt="{{ $item->title }}">
                                     @endif  
                                     
-                                    {{-- VIDEO --}}
+                                    
                                     @if($item->video)
                                        <video
                                             class="img-fluid portfolio-video"
@@ -127,25 +121,13 @@
                                             <source src="{{ asset($item->video) }}" type="video/mp4">
                                         </video>
                                     @endif
-                                    <style>
-                                        /* .portfolio-video {
-                                            pointer-events: none;
-                                        } */
-                                        
-                                    </style>
+                                    
 
                                     <div class="portfolio-info">
                                         <h4>{{ $item->title }}</h4>
                                         <p>{{ $item->description }}</p>
 
-                                        {{-- <a href="{{ asset($item->image) }}"
-                                        title="{{ $item->title }}"
-                                        data-gallery="portfolio-gallery-{{ $service->slug }}"
-                                        class="glightbox preview-link">
-                                            <i class="bi bi-zoom-in"></i>
-                                        </a> --}}
-
-                                         {{-- PREVIEW --}}
+                                        
                                         @if($item->image)
                                             <a href="{{ asset($item->image) }}"
                                             title="{{ $item->title }}"
@@ -164,7 +146,7 @@
                                             </a>
                                         @endif
 
-                                        {{-- OPTIONAL DETAILS PAGE --}}
+                                        
                                         @if($item->visit_url)
                                         
                                         <a href="{{$item->visit_url}}"
@@ -186,7 +168,55 @@
                 </div>
 
             </div>
-        </section>
+        </section> --}}
+        <section id="creators" class="portfolio section mt-5 mb-5">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Creators</h2>
+        <p>Our Creative Talent</p>
+    </div>
+
+    <div class="container">
+
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+            @foreach($creators as $creator)
+                <div class="col-lg-4 col-md-6 portfolio-item">
+
+                    <div class="portfolio-wrap">
+
+                        {{-- CREATOR IMAGE --}}
+                        @if($creator->image_path)
+                            <img src="{{ asset($creator->image_path) }}"
+                                 class="img-fluid"
+                                 alt="Creator">
+                        @endif
+
+                        <div class="portfolio-info">
+                            <h4>Creator</h4>
+
+                            {{-- DRIVE LINK --}}
+                            @if($creator->drive_link)
+                                <a href="{{ $creator->drive_link }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="details-link">
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                            @endif
+                        </div>
+
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+
+    </div>
+</section>
+
 
     </main>
 
