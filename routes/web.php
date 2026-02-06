@@ -18,12 +18,16 @@ use App\Http\Controllers\SkillServiceController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomepageSectionController;
+use App\Http\Controllers\HomepageSectionImageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PortfolioServiceController;
 use App\Http\Controllers\PortfolioServiceItemController;
 use App\Http\Controllers\ServiceController;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\HomepageSection;
+use App\Models\HomepageSectionImage;
 use App\Models\Logo;
 use App\Models\PortfolioService;
 use App\Models\SkillService;
@@ -108,6 +112,31 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::delete('/service-feature/{id}', [SkillServiceController::class, 'deleteFeature'])
         ->name('service.feature.delete');
+    
+    Route::get('/homepage-sections', 
+        [HomepageSectionController::class, 'index']
+    )->name('homepage.sections.index');
+
+    Route::post('/homepage-sections',
+        [HomepageSectionController::class, 'storeOrUpdate']
+    )->name('homepage.sections.save');
+    
+    Route::get('/homepage-section-images',
+        [HomepageSectionImageController::class, 'index']
+    )->name('homepage.section.images.index');
+
+    Route::post('/homepage-section-images',
+        [HomepageSectionImageController::class, 'store']
+    )->name('homepage.section.images.store');
+
+    Route::put('/homepage-section-images/{id}',
+        [HomepageSectionImageController::class, 'update']
+    )->name('homepage.section.images.update');
+
+    Route::delete('/homepage-section-images/{id}',
+        [HomepageSectionImageController::class, 'destroy']
+    )->name('homepage.section.images.destroy');    
+
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
@@ -139,8 +168,10 @@ Route::get('/', function () {
         ->latest()
         ->get();
     $logos = Logo::latest()->get(); 
-    $skill_services = SkillService::with('features')->latest()->get();   
-    return view('welcome',compact('banners','services','blogs','logos','skill_services'));
+    $skill_services = SkillService::with('features')->latest()->get();  
+    $hero = HomepageSection::where('status', 1)->first();
+    $hero_images = HomepageSectionImage::orderBy('sort_order')->get(); 
+    return view('welcome',compact('banners','services','blogs','logos','skill_services','hero','hero_images'));
 });
 
 

@@ -152,7 +152,7 @@
 
     <!-- Hero Section -->
 
-    <section class="hero">
+    {{-- <section id="hero" class="hero">
       <div class="hero-container">
 
         <!-- LEFT CONTENT -->
@@ -166,7 +166,9 @@
             creatives who fully integrate AI into how they think, create,
             and deliver.
           </p>
-          <a href="#" class="btn">Book a demo</a>
+          <a  href="https://wa.me/917982120764"
+              target="_blank"
+              rel="noopener noreferrer" class="btn">Book a demo</a>
         </div>
 
         <!-- RIGHT SLIDERS -->
@@ -191,7 +193,52 @@
         </div>
 
       </div>
-    </section>
+    </section> --}}
+
+    <section id="hero" class="hero">
+  <div class="hero-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-left">
+      <h1>
+        {!! nl2br(e($hero->title ?? 'Your Creative Team')) !!}
+      </h1>
+
+      <p>
+        {{ $hero->description ?? '' }}
+      </p>
+
+      <a href="https://wa.me/917982120764"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn">
+        Book a demo
+      </a>
+    </div>
+
+    <!-- RIGHT SLIDERS -->
+    <div class="hero-right">
+
+      @php
+        // Split images into 3 equal sliders
+        $chunks = $hero_images->chunk(
+            ceil($hero_images->count() / 3)
+        );
+      @endphp
+
+      @foreach($chunks as $index => $images)
+        <div class="slider {{ $index % 2 === 0 ? 'reverse' : '' }}">
+          @foreach($images as $img)
+            <img src="{{ asset($img->image_path) }}" alt="Hero image">
+          @endforeach
+        </div>
+      @endforeach
+
+    </div>
+
+  </div>
+</section>
+
 
     <!-- /Hero Section -->
 
@@ -1363,14 +1410,14 @@
         <div class="col-lg-2 col-md-6">
           <h4 class="footer-heading">Creative design services <span>↗</span></h4>
           <ul class="footer-list">
-            <li>Ad creative</li>
-            <li>Social media creative</li>
-            <li>Presentation design</li>
-            <li>Illustration design</li>
-            <li>Branding services</li>
-            <li>eBooks & report design</li>
-            <li>Print design</li>
-            <li>Packaging design</li>
+            <li><a href="#services">Ad creative</a></li>
+            <li><a href="#services">Social media creative</a></li>
+            <li><a href="#services">Presentation design</a></li>
+            <li><a href="#services">Illustration design</a></li>
+            <li><a href="#services">Branding services</a></li>
+            <li><a href="#services">eBooks & report design</a></li>
+            <li><a href="#services">Print design</a></li>
+            <li><a href="#services">Packaging design</a></li>
           </ul>
         </div>
 
@@ -1378,18 +1425,18 @@
         <div class="col-lg-3 col-md-6">
           <h4 class="footer-heading">Specialized production services <span>↗</span></h4>
           <ul class="footer-list">
-            <li>Video production</li>
-            <li>Motion design</li>
-            <li>Web design</li>
-            <li>Design systems</li>
-            <li>Product design</li>
-            <li>Copywriting</li>
+            <li><a href="#services">Video production</a></li>
+            <li><a href="#services">Motion design</a></li>
+            <li><a href="#services">Web design</a></li>
+            <li><a href="#services">Design systems</a></li>
+            <li><a href="#services">Product design</a></li>
+            <li><a href="#services">Copywriting</a></li>
           </ul>
 
           <h4 class="footer-heading mt-4">AI services <span>↗</span></h4>
           <ul class="footer-list">
-            <li>AI-powered creative</li>
-            <li>AI consulting</li>
+            <li><a href="#services">AI-powered creative</a></li>
+            <li><a href="#services">AI consulting</a></li>
           </ul>
         </div>
 
@@ -1397,11 +1444,11 @@
         <div class="col-lg-2 col-md-6">
           <h4 class="footer-heading">Main</h4>
           <ul class="footer-list">
-            <li>Our work</li>
-            <li>Our people</li>
-            <li>About us</li>
-            <li>Pricing</li>
-            <li>Careers</li>
+            <li><a href="#services">Our work</a></li>
+            <li><a href="#services">Our people</a></li>
+            <li><a href="/about">About us</a></li>
+            <li><a href="#services">Pricing</a></li>
+            <li><a href="#services">Careers</a></li>
           </ul>
         </div>
 
@@ -1409,11 +1456,11 @@
         <div class="col-lg-2 col-md-6">
           <h4 class="footer-heading">Learn</h4>
           <ul class="footer-list">
-            <li>Blog</li>
-            <li>Guides</li>
-            <li>Reports</li>
-            <li>Customer Stories</li>
-            <li>What’s new</li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#services">Guides</a></li>
+            <li><a href="#services">Reports</a></li>
+            <li><a href="#services">Customer Stories</a></li>
+            <li><a href="#services">What’s new</a></li>
           </ul>
         </div>
 
