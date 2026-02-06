@@ -4,10 +4,37 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Tourfy Brandise</title>
+  {{-- <title>Tourfy Brandise</title> --}}
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+  <!-- ✅ BASIC SEO -->
+<title>Tourfy Brandise LLP - Best Marketing and Branding Agency in India</title>
+
+<meta name="title" content="Tourfy Brandise LLP - Best Marketing and Branding Agency in India">
+<meta name="description" content="Tourfy Brandise LLP is a results-driven marketing and branding agency helping businesses grow through strategy, creativity, and performance-focused digital marketing.">
+<meta name="keywords" content="marketing agency india, branding agency delhi, digital marketing company, Tourfy Brandise">
+<meta name="author" content="Tourfy Brandise LLP">
+
+<!-- ✅ MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✅ OPEN GRAPH (Facebook / LinkedIn / WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tourfybrandise.com/">
+<meta property="og:title" content="Tourfy Brandise LLP - Marketing & Branding Agency">
+<meta property="og:description" content="Results-driven marketing and branding agency helping businesses grow.">
+<meta property="og:image" content="https://www.tourfybrandise.com/logo.png">
+<meta property="og:site_name" content="Tourfy Brandise LLP">
+
+<!-- ✅ TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tourfy Brandise LLP">
+<meta name="twitter:description" content="Marketing and Branding Agency in India">
+<meta name="twitter:image" content="https://www.tourfybrandise.com/logo.png">
+
+<!-- ✅ CANONICAL -->
+<link rel="canonical" href="https://www.tourfybrandise.com/">
     <!-- Favicon -->
     <link rel="icon" href="http://tourfybrandise.infoharry.in/tb.jpeg" type="image/jpeg">
     <link rel="apple-touch-icon" href="http://tourfybrandise.infoharry.in/tb.jpeg">
