@@ -27,6 +27,9 @@
   <meta name="twitter:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
 
 
+  <meta property="og:site_name" content="Tourfy Brandise LLP">
+<meta property="og:title" content="Tourfy Brandise LLP">
+<meta property="og:description" content="Marketing and Branding Services">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -48,6 +51,15 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+   <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Your New Brand Name",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/logo.png"
+    }
+  </script>
   
 </head>
 
@@ -249,6 +261,59 @@
 
     </div>
   </footer>
+
+   <!-- Floating Buttons -->
+<div class="floating-contact">
+    
+    <!-- WhatsApp -->
+    <a href="https://wa.me/917982120764" target="_blank" class="whatsapp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+917982120764" class="phone">
+        <i class="fa fa-phone"></i>
+    </a>
+
+</div>
+
+<style>
+  .floating-contact {
+        position: fixed;
+        right: 20px;
+        bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 9999;
+    }
+
+    .floating-contact a {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 26px;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+
+    .floating-contact a:hover {
+        transform: scale(1.1);
+    }
+
+    .whatsapp {
+        background: #25D366;
+    }
+
+    .phone {
+        background: #007bff;
+    }
+</style>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

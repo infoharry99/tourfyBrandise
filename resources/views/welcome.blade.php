@@ -32,6 +32,11 @@
 <meta name="twitter:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
 
 
+<meta name="description" content="Tourfy Brandise LLP is a marketing and branding company helping businesses grow.">
+
+<meta property="og:site_name" content="Tourfy Brandise LLP">
+<meta property="og:title" content="Tourfy Brandise LLP">
+<meta property="og:description" content="Marketing and Branding Services">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -49,6 +54,9 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   {{-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> --}}
+
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -115,6 +123,16 @@
           }
         ]
       }
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Your New Brand Name",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/logo.png"
     }
   </script>
 
@@ -197,48 +215,48 @@
     </section> --}}
 
     <section id="hero" class="hero">
-  <div class="hero-container">
+      <div class="hero-container">
 
-    <!-- LEFT CONTENT -->
-    <div class="hero-left">
-      <h1>
-        {!! nl2br(e($hero->title ?? 'Your Creative Team')) !!}
-      </h1>
+        <!-- LEFT CONTENT -->
+        <div class="hero-left">
+          <h1>
+            {!! nl2br(e($hero->title ?? 'Your Creative Team')) !!}
+          </h1>
 
-      <p>
-        {{ $hero->description ?? '' }}
-      </p>
+          <p>
+            {{ $hero->description ?? '' }}
+          </p>
 
-      <a href="https://wa.me/917982120764"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn">
-        Book a demo
-      </a>
-    </div>
-
-    <!-- RIGHT SLIDERS -->
-    <div class="hero-right">
-
-      @php
-        // Split images into 3 equal sliders
-        $chunks = $hero_images->chunk(
-            ceil($hero_images->count() / 3)
-        );
-      @endphp
-
-      @foreach($chunks as $index => $images)
-        <div class="slider {{ $index % 2 === 0 ? 'reverse' : '' }}">
-          @foreach($images as $img)
-            <img src="{{ asset($img->image_path) }}" alt="Hero image">
-          @endforeach
+          <a href="https://wa.me/917982120764"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn">
+            Book a demo
+          </a>
         </div>
-      @endforeach
 
-    </div>
+        <!-- RIGHT SLIDERS -->
+        <div class="hero-right">
 
-  </div>
-</section>
+          @php
+            // Split images into 3 equal sliders
+            $chunks = $hero_images->chunk(
+                ceil($hero_images->count() / 3)
+            );
+          @endphp
+
+          @foreach($chunks as $index => $images)
+            <div class="slider {{ $index % 2 === 0 ? 'reverse' : '' }}">
+              @foreach($images as $img)
+                <img src="{{ asset($img->image_path) }}" alt="Hero image">
+              @endforeach
+            </div>
+          @endforeach
+
+        </div>
+
+      </div>
+    </section>
 
 
     <!-- /Hero Section -->
@@ -1400,6 +1418,8 @@
     </section>
     <!-- /Contact Section -->
 
+
+
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -1508,6 +1528,58 @@
     </div>
   </footer>
 
+  <!-- Floating Buttons -->
+<div class="floating-contact">
+    
+    <!-- WhatsApp -->
+    <a href="https://wa.me/917982120764" target="_blank" class="whatsapp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+917982120764" class="phone">
+        <i class="fa fa-phone"></i>
+    </a>
+
+</div>
+
+<style>
+  .floating-contact {
+        position: fixed;
+        right: 20px;
+        bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 9999;
+    }
+
+    .floating-contact a {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 26px;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+
+    .floating-contact a:hover {
+        transform: scale(1.1);
+    }
+
+    .whatsapp {
+        background: #25D366;
+    }
+
+    .phone {
+        background: #007bff;
+    }
+</style>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
