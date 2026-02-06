@@ -7,10 +7,26 @@
   <title>Tourfy Brandise</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <!-- Favicon -->
+  <link rel="icon" href="http://tourfybrandise.infoharry.in/tb.jpeg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="http://tourfybrandise.infoharry.in/tb.jpeg">
 
-  <!-- Favicons -->
-  {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
-  {{-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="Tourfy Brandise LLP">
+  <meta property="og:description" content="Branding Agency & Digital Solutions">
+  <meta property="og:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="http://tourfybrandise.infoharry.in/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tourfy Brandise LLP">
+  <meta name="twitter:description" content="Travel, Branding & Digital Solutions">
+  <meta name="twitter:image" content="http://tourfybrandise.infoharry.in/tb.jpeg">
+
+
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -53,11 +69,11 @@
             <ul>
             <li><a href="/" >Home</a></li>
             <li><a href="/about" class="active">About</a></li>
-            <li><a href="//#services">Services</a></li>
+            <li><a href="/#services">Services</a></li>
             <li><a href="/portfolio-section">Portfolio</a></li>
+            <li><a href="/creator">Creator</a></li>
             {{-- <li><a href="#team">Team</a></li> --}}
             <li><a href="/#blog">Blogs</a></li>
-            
             <li><a href="/#contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
