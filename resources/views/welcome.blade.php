@@ -186,6 +186,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="/portfolio-section">Portfolio</a></li>
           <li><a href="/creator" >Creator</a></li>
+          <li><a href="#team">Team</a></li>
           
           <li><a href="#blog">Blogs</a></li>
          
@@ -1087,6 +1088,75 @@
 
     </section> --}}
     <!-- /Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Our Hardworking Team</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          @foreach($team as $index => $member)
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch"
+                data-aos="fade-up"
+                data-aos-delay="{{ 100 * ($index + 1) }}">
+
+              <div class="team-member">
+                <div class="member-img">
+
+                  {{-- TEAM IMAGE --}}
+                  <img src="{{ asset($member->image_path) }}"
+                      class="img-fluid"
+                      alt="{{ $member->name }}">
+
+                  {{-- SOCIAL LINKS --}}
+                  <div class="social">
+                    @if($member->x_url)
+                      <a href="{{ $member->x_url }}" target="_blank">
+                        <i class="bi bi-twitter-x"></i>
+                      </a>
+                    @endif
+
+                    @if($member->fb_url)
+                      <a href="{{ $member->fb_url }}" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                      </a>
+                    @endif
+
+                    @if($member->insta_url)
+                      <a href="{{ $member->insta_url }}" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                      </a>
+                    @endif
+
+                    @if($member->linkedin_url)
+                      <a href="{{ $member->linkedin_url }}" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                      </a>
+                    @endif
+                  </div>
+
+                </div>
+
+                <div class="member-info">
+                  <h4>{{ $member->name }}</h4>
+                  <span>{{ $member->designation }}</span>
+                </div>
+              </div>
+
+            </div>
+          @endforeach
+
+        </div>
+
+      </div>
+
+    </section>
+
 
     <!-- Recent Posts Section -->
     {{-- <section id="recent-posts" class="recent-posts section">

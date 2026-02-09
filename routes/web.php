@@ -26,6 +26,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PortfolioServiceController;
 use App\Http\Controllers\PortfolioServiceItemController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamMemberController;
 use App\Http\Controllers\TestimonialController;
 use App\Models\Banner;
 use App\Models\Blog;
@@ -34,6 +35,7 @@ use App\Models\HomepageSectionImage;
 use App\Models\Logo;
 use App\Models\PortfolioService;
 use App\Models\SkillService;
+use App\Models\TeamMember;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Artisan;
 
@@ -169,6 +171,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::delete('/testimonials/{id}', [TestimonialController::class, 'destroy'])
         ->name('testimonials.destroy');    
+
+    
+     Route::get('/team-members', [TeamMemberController::class, 'index'])
+        ->name('team.members.index');
+
+    Route::post('/team-members', [TeamMemberController::class, 'store'])
+        ->name('team.members.store');
+
+    Route::put('/team-members/{id}', [TeamMemberController::class, 'update'])
+        ->name('team.members.update');
+
+    Route::delete('/team-members/{id}', [TeamMemberController::class, 'destroy'])
+        ->name('team.members.destroy');    
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
@@ -204,8 +219,9 @@ Route::get('/', function () {
     $hero = HomepageSection::where('status', 1)->first();
     $hero_images = HomepageSectionImage::orderBy('sort_order')->get();
     $testimonials = Testimonial::where('status', 1)->latest()->get();
+    $team = TeamMember::where('status', 1)->latest()->get();
    
-    return view('welcome',compact('banners','services','blogs','logos','skill_services','hero','hero_images','testimonials'));
+    return view('welcome',compact('banners','services','blogs','logos','skill_services','hero','hero_images','testimonials','team'));
 });
 
 

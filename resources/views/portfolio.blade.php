@@ -115,7 +115,7 @@
             <li><a href="/#services">Services</a></li>
             <li><a href="/portfolio-section" class="active">Portfolio</a></li>
             <li><a href="/creator">Creator</a></li>
-            {{-- <li><a href="#team">Team</a></li> --}}
+            <li><a href="/">Team</a></li>
             <li><a href="/#blog">Blogs</a></li>
             <li><a href="/#contact">Contact</a></li>
             </ul>

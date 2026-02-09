@@ -3021,15 +3021,32 @@ section,
 }
 
 /* ===== BLOGS SECTION ===== */
+/* ===== BLOGS SECTION ===== */
 .flex-section {
     background: var(--background-color);
     padding: 80px 120px;
+    overflow: hidden;
+}
+
+/* ===== HORIZONTAL SCROLL CONTAINER ===== */
+.flex-container {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 24px;
+}
+
+/* Hide scrollbar */
+.flex-container::-webkit-scrollbar {
+    display: none;
 }
 
 .flex-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* ===== CARD ===== */
@@ -3040,16 +3057,21 @@ section,
     position: relative;
     transition: all 0.4s ease;
     cursor: pointer;
+
+    min-width: 360px;
+    max-width: 360px;
+    scroll-snap-align: start;
 }
 
-/* IMAGE */
+/* ===== IMAGE ===== */
 .flex-image img {
     width: 100%;
     height: 420px;
     object-fit: cover;
+    display: block;
 }
 
-/* CONTENT */
+/* ===== CONTENT ===== */
 .flex-content {
     padding: 28px;
     min-height: 90px;
@@ -3077,7 +3099,7 @@ section,
     transition: all 0.4s ease;
 }
 
-/* ===== HOVER EFFECT (SECOND IMAGE STYLE) ===== */
+/* ===== HOVER EFFECT ===== */
 .flex-card:hover .flex-content p {
     opacity: 1;
     max-height: 120px;
@@ -3119,7 +3141,24 @@ section,
         padding: 60px 40px;
     }
 
-    .flex-container {
-        grid-template-columns: 1fr;
+    .flex-card {
+        min-width: 320px;
+        max-width: 320px;
     }
 }
+
+@media (max-width: 768px) {
+    .flex-section {
+        padding: 40px 20px;
+    }
+
+    .flex-card {
+        min-width: 280px;
+        max-width: 280px;
+    }
+
+    .flex-image img {
+        height: 360px;
+    }
+}
+
